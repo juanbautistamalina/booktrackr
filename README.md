@@ -32,6 +32,7 @@ Este proyecto se desarrolla en paralelo al **bootcamp Full Stack de [midudev](ht
 
 ## 🎨 Diseño
 ![Diseño de la aplicación](assets/screenshot.png)
+- 👉🏻 [Ver diseño del proyecto](https://stitch.withgoogle.com/projects/10756088116725934991)
 
 ## 📜 Licencia
 
