@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BookTrackr - Mis Libros</title>
   <link rel="stylesheet" href="style.css" />
+  <script type="module" src="./script.js"></script>
 </head>
 
 <body>
@@ -50,11 +51,11 @@
   <main class="books">
     <section>
       <h1>Mis Libros</h1>
-      <ul>
-        <li><a href="#">Todos</a></li>
-        <li><a href="#">Leyendo</a></li>
-        <li><a href="#">Leídos</a></li>
-        <li><a href="#">Próximos</a></li>
+      <ul class="filter-list">
+        <li><a href="#" class="filter-item">Todos</a></li>
+        <li><a href="#" class="filter-item">Leyendo</a></li>
+        <li><a href="#" class="filter-item">Leídos</a></li>
+        <li><a href="#" class="filter-item">Pendientes</a></li>
       </ul>
 
       <div class="book-list">
@@ -78,9 +79,21 @@
         </div>
 
         <div class="book-card">
+          <img src="img/books/el-extranjero.jpg" alt="Book Cover" />
+          <h2>El Extranjero</h2>
+          <p>Albert Camus</p>
+        </div>
+
+        <div class="book-card">
+          <img src="img/books/1984.jpg" alt="Book Cover" />
+          <h2>1984</h2>
+          <p>George Orwell</p>
+        </div>
+
+        <div class="book-card">
           <img src="img/books/la-metamorfosis.jpg" alt="Book Cover" />
           <h2>La Metamorfosis</h2>
-          <p>Franz Fafka</p>
+          <p>Franz Kafka</p>
         </div>
 
         <div class="book-card">
@@ -89,8 +102,39 @@
           <p>Friedrich Nietzsche</p>
         </div>
 
+        <!-- Libros nuevos -->
+        <div class="book-card">
+          <img src="img/books/el-hombre-en-busca-de-sentido.jpg" alt="Book Cover" />
+          <h2>El Hombre en Busca de Sentido</h2>
+          <p>Viktor Frankl</p>
+        </div>
+
+        <div class="book-card">
+          <img src="img/books/un-mundo-feliz.jpg" alt="Book Cover" />
+          <h2>Un Mundo Feliz</h2>
+          <p>Aldous Huxley</p>
+        </div>
+
+        <div class="book-card">
+          <img src="img/books/el-proceso.jpg" alt="Book Cover" />
+          <h2>El Proceso</h2>
+          <p>Franz Kafka</p>
+        </div>
+
+        <div class="book-card">
+          <img src="img/books/los-hermanos-karamazov.jpg" alt="Book Cover" />
+          <h2>Los Hermanos Karamazov</h2>
+          <p>Fyodor Dostoevsky</p>
+        </div>
+
+        <div class="book-card">
+          <img src="img/books/siddhartha.jpg" alt="Book Cover" />
+          <h2>Siddhartha</h2>
+          <p>Hermann Hesse</p>
+        </div>
 
       </div>
+
     </section>
   </main>
 </body>

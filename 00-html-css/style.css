@@ -419,17 +419,25 @@ main.books {
 
     & .book-card {
       width: 170px;
-      height: 220px;
+      height: 250px;
       border-radius: 1em;
       border: 1px solid var(--color-line);
       padding: 0.5em;
       margin-bottom: 5em;
       cursor: pointer;
       text-align: left;
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 10px var(--primary-dark);
+      }
 
       & img {
         width: 100%;
-        height: 100%;
+        max-height: 240px;
         object-fit: cover;
         border-radius: 0.4em;
       }
@@ -443,6 +451,10 @@ main.books {
       & p {
         font-size: 0.8em;
         color: var(--color-muted);
+      }
+
+      &.reading {
+        display: none;
       }
     }
   }
