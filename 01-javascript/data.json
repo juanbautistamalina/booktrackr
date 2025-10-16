@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "Crimen y Castigo",
+    "author": "Fyodor Dostoevsky",
+    "img": "img/books/crimen-y-castigo.jpg",
+    "status": "reading"
+  },
+  {
+    "id": 2,
+    "title": "Memorias del Subsuelo",
+    "author": "Fyodor Dostoevsky",
+    "img": "img/books/memorias-del-subsuelo.jpg",
+    "status": "pending"
+  },
+  {
+    "id": 3,
+    "title": "La Peste",
+    "author": "Albert Camus",
+    "img": "img/books/la-peste.jpg",
+    "status": "read"
+  },
+  {
+    "id": 4,
+    "title": "El Extranjero",
+    "author": "Albert Camus",
+    "img": "img/books/el-extranjero.jpg",
+    "status": "read"
+  },
+  {
+    "id": 5,
+    "title": "1984",
+    "author": "George Orwell",
+    "img": "img/books/1984.jpg",
+    "status": "pending"
+  },
+  {
+    "id": 6,
+    "title": "La Metamorfosis",
+    "author": "Franz Kafka",
+    "img": "img/books/la-metamorfosis.jpg",
+    "status": "reading"
+  },
+  {
+    "id": 7,
+    "title": "Así habló Zaratustra",
+    "author": "Friedrich Nietzsche",
+    "img": "img/books/asi-hablo-zaratustra.jpg",
+    "status": "pending"
+  },
+  {
+    "id": 8,
+    "title": "El Hombre en Busca de Sentido",
+    "author": "Viktor Frankl",
+    "img": "img/books/el-hombre-en-busca-de-sentido.jpg",
+    "status": "reading"
+  },
+  {
+    "id": 9,
+    "title": "Un Mundo Feliz",
+    "author": "Aldous Huxley",
+    "img": "img/books/un-mundo-feliz.jpg",
+    "status": "pending"
+  },
+  {
+    "id": 10,
+    "title": "El Proceso",
+    "author": "Franz Kafka",
+    "img": "img/books/el-proceso.jpg",
+    "status": "pending"
+  },
+  {
+    "id": 11,
+    "title": "Los Hermanos Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "img": "img/books/los-hermanos-karamazov.jpg",
+    "status": "pending"
+  },
+  {
+    "id": 12,
+    "title": "Siddhartha",
+    "author": "Hermann Hesse",
+    "img": "img/books/siddhartha.jpg",
+    "status": "read"
+  }
+]

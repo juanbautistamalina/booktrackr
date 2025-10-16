@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookTrackr - Mis Libros</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+  <div class="background-image"></div>
+
+  <header class="navbar">
+    <div class="navbar-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="icon icon-tabler icon-tabler-book">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6l0 13" />
+        <path d="M12 6l0 13" />
+        <path d="M21 6l0 13" />
+      </svg>
+      <h2>BookTrackr</h2>
+    </div>
+
+    <nav class="navbar-links">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="books.html" class="active">Mi Biblioteca</a></li>
+        <li><a href="login.html">Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+
+    <div class="navbar-info">
+      <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 5l0 14" />
+          <path d="M5 12l14 0" />
+        </svg>Agregar libro</button>
+      <img src="img/src/avatar.jpg" alt="User Avatar">
+
+    </div>
+  </header>
+
+  <main class="books">
+    <section>
+      <h1>Mis Libros</h1>
+      <ul class="filter-list">
+        <li><a href="#" class="filter-item">Todos</a></li>
+        <li><a href="#" class="filter-item">Leyendo</a></li>
+        <li><a href="#" class="filter-item">Leídos</a></li>
+        <li><a href="#" class="filter-item">Pendientes</a></li>
+      </ul>
+
+      <div class="book-list">
+
+      </div>
+
+    </section>
+  </main>
+
+  <div id="modal" class="hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Editar Detalles del libro</h2>
+      <form>
+        <label for="modal-title">Titulo</label>
+        <input type="text" id="modal-title">
+        <label for="modal-author">Autor</label>
+        <input type="text" id="modal-author">
+        <label for="modal-status">Estado</label>
+        <select name="" id="modal-status">
+          <option value="reading">Leyendo</option>
+          <option value="read">Leido</option>
+          <option value="pending">Pendiente</option>
+        </select>
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+  
+</body>
+
+</html>
