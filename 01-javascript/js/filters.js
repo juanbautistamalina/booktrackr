@@ -28,5 +28,3 @@ filtros.forEach((filtro) => {
     }
   });
 });
-
-// Modal

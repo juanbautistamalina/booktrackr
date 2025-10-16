@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BookTrackr - Mis Libros</title>
-  <link rel="stylesheet" href="style.css" />
-  <script type="module" src="./main.js"></script>
+  <link rel="stylesheet" href="../style.css" />
+  <script type="module" src="../main.js"></script>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 
     <nav class="navbar-links">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="../index.html">Inicio</a></li>
         <li><a href="books.html" class="active">Mi Biblioteca</a></li>
         <li><a href="login.html">Iniciar Sesión</a></li>
       </ul>
@@ -43,7 +43,7 @@
           <path d="M12 5l0 14" />
           <path d="M5 12l14 0" />
         </svg>Agregar libro</button>
-      <img src="img/src/avatar.jpg" alt="User Avatar">
+      <booktrackr-avatar />
 
     </div>
   </header>
@@ -68,7 +68,7 @@
   <div id="modal" class="hidden">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Editar Detalles del libro</h2>
+      <h2>Editar Detalles del Libro</h2>
       <form>
         <label for="modal-title">Titulo</label>
         <input type="text" id="modal-title">

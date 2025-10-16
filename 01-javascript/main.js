@@ -1,2 +1,3 @@
-import "./fetch-data.js";
-import "./modal.js"
+import "./js/fetch-data.js"
+import "./js/modal.js"
+import "./js/avatar-element.js"

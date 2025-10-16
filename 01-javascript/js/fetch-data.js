@@ -1,6 +1,6 @@
 const container = document.querySelector('.book-list');
 
-fetch("./data.json")
+fetch("../js/data.json")
     .then((response) => response.json())
     .then((books) => {
         books.forEach(book => {
