@@ -561,6 +561,10 @@ main.books {
     }
 
   }
-
-
 }
+
+/* Filtros */
+.book-list .hidden {
+  display: none;
+}
+
