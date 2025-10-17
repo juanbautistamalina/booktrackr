@@ -1,3 +1,4 @@
+// Web Component Nativo
 class BookTrackrAvatar extends HTMLElement {
   constructor() {
     super(); // llamar al constructor de HTMLElement
