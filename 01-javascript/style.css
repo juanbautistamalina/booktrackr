@@ -430,6 +430,7 @@ main.books {
       opacity: 1;
       transform: scale(1);
       transition: opacity 0.3s ease, transform 0.3s ease;
+      position: relative;
 
       &:hover {
         transform: translateY(-3px);
@@ -456,6 +457,16 @@ main.books {
 
       &.reading {
         display: none;
+      }
+
+      & .book-status {
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+        padding: 0.2em 0.4em;
+        border-radius: 0.4em;
+        background-color: var(--primary-dark);
+        color: var(--background-light);
       }
     }
   }
