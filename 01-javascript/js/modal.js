@@ -1,32 +1,27 @@
 const contenedorLibros = document.querySelector(".book-list");
+
+// Variables del Modal
 const modal = document.getElementById("modal");
 const modalTitle = modal.querySelector("#modal-title");
 const modalAuthor = modal.querySelector("#modal-author");
 const modalStatus = modal.querySelector("#modal-status");
 const btnSave = modal.querySelector("button");
 let modalMode = "add"; // "add" o "edit"
+let selectedCard = null;
 
-// Edición de Libros
+
+// Funcionalidad de Edición de Libros
 contenedorLibros.addEventListener("click", (event) => {
   const card = event.target.closest(".book-card");
-  modalMode = "edit";
-
   if (card) {
+    modalMode = "edit";
+    selectedCard = card;
     modal.classList.remove("hidden"); // mostrar el modal
 
     // obtener el titulo, autor y estado del libro y mostrarlos en el modal
     modalTitle.value = card.querySelector(".book-title").textContent;
     modalAuthor.value = card.querySelector(".book-author").textContent;
     modalStatus.value = card.querySelector(".book-status").textContent;
-
-    // editar las propiedades del libro
-    btnSave.addEventListener("click", (event) => {
-      event.preventDefault();
-      card.querySelector(".book-title").textContent = modalTitle.value;
-      card.querySelector(".book-author").textContent = modalAuthor.value;
-      card.querySelector(".book-status").textContent = modalStatus.value;
-      modal.classList.add("hidden");
-    });
   }
 });
 
@@ -36,28 +31,24 @@ modal.querySelector(".close").addEventListener("click", () => {
 
 
 
-// Agregar un nuevo libro
+// Funcionalidad de Agregar un nuevo libro (botón)
 const btnAdd = document.querySelector(".navbar-info").querySelector("button");
 btnAdd.addEventListener("click", () => {
   modalMode = "add";
+  selectedCard = null;
+
+  // mostrar modal
   modal.classList.remove("hidden");
+  
+  // vaciar campos del modal
   modalTitle.value = "";
   modalAuthor.value = "";
   modalStatus.value = "reading";
 });
 
-contenedorLibros.addEventListener("click", (event) => {
-  const card = event.target.closest(".book-card");
-  if (card) {
-    modalMode = "edit";
-    modal.classList.remove("hidden");
 
-    modalTitle.value = card.querySelector(".book-title").textContent;
-    modalAuthor.value = card.querySelector(".book-author").textContent;
-    modalStatus.value = card.querySelector(".book-status").textContent;
-  }
-});
 
+// Funcionalidad de Guardado de Libros (botón)
 btnSave.addEventListener("click", (event) => {
   event.preventDefault();
 
@@ -74,17 +65,13 @@ btnSave.addEventListener("click", (event) => {
   }
 
   if (modalMode === "edit") {
-    const card = document.querySelector(`[data-id="${modal.dataset.id}"]`);
-    if (card) {
-      card.querySelector(".book-title").textContent = modalTitle.value;
-      card.querySelector(".book-author").textContent = modalAuthor.value;
-      card.querySelector(".book-status").textContent = modalStatus.value;
+    if (selectedCard) {
+      // cambiar los valores del libro seleccionado por lo introducido en los inputs del modal
+      selectedCard.querySelector(".book-title").textContent = modalTitle.value;
+      selectedCard.querySelector(".book-author").textContent = modalAuthor.value;
+      selectedCard.querySelector(".book-status").textContent = modalStatus.value;
     }
   }
 
   modal.classList.add("hidden");
 });
-
-
-// Error: Al editar un libro, este se edita correctamente, pero al editar otro libro, el anterior se edita también
-// Solución: 
