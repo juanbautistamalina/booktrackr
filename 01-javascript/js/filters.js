@@ -3,7 +3,7 @@ const filtros = document.querySelectorAll(".filter-item"); // seleccionar todos 
 filtros.forEach((filtro) => {
   filtro.addEventListener("click", () => {
     const filtroSeleccionado = filtro.getAttribute("data-filter");
-    const libros = document.querySelectorAll(".book-card");
+    const libros = document.querySelectorAll(".book-card"); // actualizar la lista de libros cada vez que se filtra
 
     libros.forEach((libro) => {
       const estado = libro.querySelector("p:last-child").getAttribute("value");
