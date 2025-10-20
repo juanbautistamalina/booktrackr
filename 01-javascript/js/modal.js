@@ -10,7 +10,6 @@ const btnSave = modal.querySelector("button");
 let modalMode = "add"; // "add" o "edit"
 let selectedCard = null;
 
-
 // Funcionalidad de Edición de Libros
 contenedorLibros.addEventListener("click", (event) => {
   const card = event.target.closest(".book-card");
@@ -25,32 +24,28 @@ contenedorLibros.addEventListener("click", (event) => {
     modalStatus.value = card.querySelector(".book-status").textContent;
     modalNotes.value = card.querySelector(".book-notes").textContent;
     // modalGenre.value = card.querySelector(".book-genre").textContent;
-    }
+  }
 });
 
 modal.querySelector(".close").addEventListener("click", () => {
   modal.classList.add("hidden");
 });
 
-
-
 // Funcionalidad de Agregar un nuevo libro (botón)
-const btnAdd = document.querySelector(".navbar-info").querySelector("button");
+const btnAdd = document.querySelector(".add-book-button");
 btnAdd.addEventListener("click", () => {
   modalMode = "add";
   selectedCard = null;
 
   // mostrar modal
   modal.classList.remove("hidden");
-  
+
   // vaciar campos del modal
   modalTitle.value = "";
   modalAuthor.value = "";
   modalStatus.value = "reading";
   modalNotes.value = "";
 });
-
-
 
 // Funcionalidad de Guardado de Libros (botón)
 btnSave.addEventListener("click", (event) => {
@@ -60,11 +55,12 @@ btnSave.addEventListener("click", (event) => {
     const bookCard = document.createElement("div");
     bookCard.classList.add("book-card");
     bookCard.innerHTML = `
-      <img src="../img/books/default.jpg" alt="${modalTitle.value}">
+      <img class="default-cover" src="../img/books/default.jpg" alt="${modalTitle.value}">
       <h2 class="book-title">${modalTitle.value}</h2>
       <p class="book-author">${modalAuthor.value}</p>
-      <p class="book-status">${modalStatus.value}</p>
+      <p class="book-status" value="${modalStatus.value}">${modalStatus.value}</p>
       <p class="book-notes hidden">${modalNotes.value}</p>
+      <p class="book-genre hidden"></p>
     `;
     contenedorLibros.appendChild(bookCard);
   }
@@ -73,8 +69,13 @@ btnSave.addEventListener("click", (event) => {
     if (selectedCard) {
       // cambiar los valores (internos) del libro seleccionado por lo introducido en los inputs del modal
       selectedCard.querySelector(".book-title").textContent = modalTitle.value;
-      selectedCard.querySelector(".book-author").textContent = modalAuthor.value;
-      selectedCard.querySelector(".book-status").textContent = modalStatus.value;
+      selectedCard.querySelector(".book-author").textContent =
+        modalAuthor.value;
+      selectedCard.querySelector(".book-status").textContent =
+        modalStatus.value;
+      selectedCard
+        .querySelector(".book-status")
+        .setAttribute("value", modalStatus.value);
       selectedCard.querySelector(".book-notes").textContent = modalNotes.value;
     }
   }
