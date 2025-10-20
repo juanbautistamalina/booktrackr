@@ -7,12 +7,13 @@
   <title>BookTrackr - Inicio</title>
   <link rel="icon" type="image/png" href="../assets/favicon.ico" />
   <link rel="stylesheet" href="style.css" />
+  <script src="./js/hamburger.js" defer></script>
 </head>
 
 <body>
   <div class="background-image"></div>
 
-  <header class="navbar">
+  <header class="navbar index">
     <div class="navbar-logo">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -27,13 +28,25 @@
       <h2>BookTrackr</h2>
     </div>
 
-    <nav class="navbar-links">
+    <nav class="navbar-links desktop-nav">
       <ul>
         <li><a href="index.html" class="active">Inicio</a></li>
         <li><a href="./pages/books.html">Mi Biblioteca</a></li>
         <li><a href="./pages/login.html">Iniciar Sesión</a></li>
       </ul>
     </nav>
+
+    <button class="hamburger-button" aria-label="Abrir menú">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <div class="mobile-nav">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="./pages/books.html">Mi Biblioteca</a>
+      <a href="./pages/login.html">Iniciar Sesión</a>
+    </div>
   </header>
 
   <main class="home">

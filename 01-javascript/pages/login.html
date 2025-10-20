@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BookTrackr - Iniciar Sesión</title>
   <link rel="stylesheet" href="../style.css" />
+  <script src="../js/hamburger.js" defer></script>
 </head>
 
 <body>
-  <header class="navbar">
+  <header class="navbar login">
     <div class="navbar-logo">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -24,13 +25,25 @@
       <h2>BookTrackr</h2>
     </div>
 
-    <nav class="navbar-links">
+    <nav class="navbar-links desktop-nav">
       <ul>
         <li><a href="../index.html">Inicio</a></li>
         <li><a href="books.html">Mi Biblioteca</a></li>
         <li><a href="login.html" class="active">Iniciar Sesión</a></li>
       </ul>
     </nav>
+
+    <button class="hamburger-button" aria-label="Abrir menú">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <div class="mobile-nav">
+      <a href="../index.html">Inicio</a>
+      <a href="books.html">Mi Biblioteca</a>
+      <a href="login.html" class="active">Iniciar Sesión</a>
+    </div>
   </header>
 
   <main class="main-form">
