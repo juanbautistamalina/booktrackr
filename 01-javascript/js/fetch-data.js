@@ -11,6 +11,8 @@ fetch("../js/data.json") // obtener los datos de los libros
             <h2 class="book-title">${book.title}</h2>
             <p class="book-author">${book.author}</p>
             <p class="book-status" value="${book.status}">${book.status}</p>
+            <p class="book-notes hidden">${book.notes}</p>
+            <p class="book-genre hidden">${book.genre}</p>
             `;
             container.appendChild(bookCard);
         })

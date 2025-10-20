@@ -6,7 +6,7 @@ filtros.forEach((filtro) => {
     const libros = document.querySelectorAll(".book-card"); // actualizar la lista de libros cada vez que se filtra
 
     libros.forEach((libro) => {
-      const estado = libro.querySelector("p:last-child").getAttribute("value");
+      const estado = libro.querySelector("p.book-status").getAttribute("value");
       
       // para cada libro, verificar si su estado coincide con el filtro seleccionado
       if (estado === filtroSeleccionado || filtroSeleccionado === "all") {

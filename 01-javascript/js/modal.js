@@ -5,6 +5,7 @@ const modal = document.getElementById("modal");
 const modalTitle = modal.querySelector("#modal-title");
 const modalAuthor = modal.querySelector("#modal-author");
 const modalStatus = modal.querySelector("#modal-status");
+const modalNotes = modal.querySelector("#modal-notes");
 const btnSave = modal.querySelector("button");
 let modalMode = "add"; // "add" o "edit"
 let selectedCard = null;
@@ -18,11 +19,13 @@ contenedorLibros.addEventListener("click", (event) => {
     selectedCard = card;
     modal.classList.remove("hidden"); // mostrar el modal
 
-    // obtener el titulo, autor y estado del libro y mostrarlos en el modal
+    // obtener el titulo, autor, estado y notas del libro y mostrarlos en el modal
     modalTitle.value = card.querySelector(".book-title").textContent;
     modalAuthor.value = card.querySelector(".book-author").textContent;
     modalStatus.value = card.querySelector(".book-status").textContent;
-  }
+    modalNotes.value = card.querySelector(".book-notes").textContent;
+    // modalGenre.value = card.querySelector(".book-genre").textContent;
+    }
 });
 
 modal.querySelector(".close").addEventListener("click", () => {
@@ -44,6 +47,7 @@ btnAdd.addEventListener("click", () => {
   modalTitle.value = "";
   modalAuthor.value = "";
   modalStatus.value = "reading";
+  modalNotes.value = "";
 });
 
 
@@ -60,16 +64,18 @@ btnSave.addEventListener("click", (event) => {
       <h2 class="book-title">${modalTitle.value}</h2>
       <p class="book-author">${modalAuthor.value}</p>
       <p class="book-status">${modalStatus.value}</p>
+      <p class="book-notes hidden">${modalNotes.value}</p>
     `;
     contenedorLibros.appendChild(bookCard);
   }
 
   if (modalMode === "edit") {
     if (selectedCard) {
-      // cambiar los valores del libro seleccionado por lo introducido en los inputs del modal
+      // cambiar los valores (internos) del libro seleccionado por lo introducido en los inputs del modal
       selectedCard.querySelector(".book-title").textContent = modalTitle.value;
       selectedCard.querySelector(".book-author").textContent = modalAuthor.value;
       selectedCard.querySelector(".book-status").textContent = modalStatus.value;
+      selectedCard.querySelector(".book-notes").textContent = modalNotes.value;
     }
   }
 
