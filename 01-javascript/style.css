@@ -103,42 +103,6 @@ body {
   }
 }
 
-.navbar-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-
-  /* & img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: 100px solid;
-  } */
-
-  & button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-    font-family: "Times New Roman", serif;
-    background-color: var(--primary);
-    color: var(--background-light);
-    border: none;
-    padding: 0.8em 1em;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-  }
-
-  & button:hover {
-    background-color: var(--primary-dark);
-    transform: translateX(-3px);
-  }
-}
-
 /* Menú Hamburguesa */
 .hamburger-button {
   display: none;
@@ -524,8 +488,39 @@ main.books {
       }
 
       & .default-cover {
-        aspect-ratio: 2/3;  
+        aspect-ratio: 2/3;
       }
+    }
+  }
+
+  & .add-book-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    /* z-index: 100; */
+    & button {
+      background-color: var(--primary);
+      color: var(--background-light);
+      border: none;
+      padding: 0.8em 1em;
+      font-size: 1rem;
+      border-radius: 0.6em;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: "Times New Roman", serif;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+    }
+    & button svg {
+      width: 24px;
+      height: 24px;
+    }
+    & button:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
     }
   }
 }
@@ -661,11 +656,11 @@ main.books {
   }
 
   .navbar-links.desktop-nav {
-    display: none; /* Ocultar navegación de escritorio */
+    display: none;
   }
 
   .hamburger-button {
-    display: flex; /* Mostrar botón hamburguesa */
+    display: flex;
   }
 
   .mobile-nav {
@@ -705,37 +700,11 @@ main.books {
   .navbar.login .navbar-logo {
     flex-grow: 1;
   }
-}
 
-
-/* Agregar libro button (prueba)*/
-.add-book-button {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 100;
-  & button {
-    background-color: var(--primary);
-    color: var(--background-light);
-    border: none;
-    padding: 0.8em 1em;
-    font-size: 1rem;
-    border-radius: 0.6em;
-    cursor: pointer;
-    font-weight: bold;
-    font-family: "Times New Roman", serif;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-  }
-  & button svg {
-    width: 24px;
-    height: 24px;
-  }
-  & button:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
+  booktrackr-avatar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
