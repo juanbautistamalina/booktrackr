@@ -6,6 +6,7 @@ const modalTitle = modal.querySelector("#modal-title");
 const modalAuthor = modal.querySelector("#modal-author");
 const modalStatus = modal.querySelector("#modal-status");
 const modalNotes = modal.querySelector("#modal-notes");
+const modalGenre = modal.querySelector("#modal-genre");
 const btnSave = modal.querySelector("button");
 let modalMode = "add"; // "add" o "edit"
 let selectedCard = null;
@@ -23,7 +24,7 @@ contenedorLibros.addEventListener("click", (event) => {
     modalAuthor.value = card.querySelector(".book-author").textContent;
     modalStatus.value = card.querySelector(".book-status").textContent;
     modalNotes.value = card.querySelector(".book-notes").textContent;
-    // modalGenre.value = card.querySelector(".book-genre").textContent;
+    modalGenre.value = card.querySelector(".book-genre").textContent;
   }
 });
 
@@ -45,6 +46,7 @@ btnAdd.addEventListener("click", () => {
   modalAuthor.value = "";
   modalStatus.value = "reading";
   modalNotes.value = "";
+  modalGenre.value = "";
 });
 
 // Funcionalidad de Guardado de Libros (botón)
@@ -60,7 +62,7 @@ btnSave.addEventListener("click", (event) => {
       <p class="book-author">${modalAuthor.value}</p>
       <p class="book-status" value="${modalStatus.value}">${modalStatus.value}</p>
       <p class="book-notes hidden">${modalNotes.value}</p>
-      <p class="book-genre hidden"></p>
+      <p class="book-genre hidden">${modalGenre.value}</p>
     `;
     contenedorLibros.appendChild(bookCard);
   }
@@ -69,14 +71,11 @@ btnSave.addEventListener("click", (event) => {
     if (selectedCard) {
       // cambiar los valores (internos) del libro seleccionado por lo introducido en los inputs del modal
       selectedCard.querySelector(".book-title").textContent = modalTitle.value;
-      selectedCard.querySelector(".book-author").textContent =
-        modalAuthor.value;
-      selectedCard.querySelector(".book-status").textContent =
-        modalStatus.value;
-      selectedCard
-        .querySelector(".book-status")
-        .setAttribute("value", modalStatus.value);
+      selectedCard.querySelector(".book-author").textContent = modalAuthor.value;
+      selectedCard.querySelector(".book-status").textContent = modalStatus.value;
+      selectedCard.querySelector(".book-status").setAttribute("value", modalStatus.value);
       selectedCard.querySelector(".book-notes").textContent = modalNotes.value;
+      selectedCard.querySelector(".book-genre").textContent = modalGenre.value;
     }
   }
 
