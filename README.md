@@ -2,6 +2,12 @@
 
 > **Tu biblioteca personal online.** Una aplicación web para registrar, organizar y gestionar tus lecturas favoritas, con un estilo clásico inspirado en las bibliotecas vintage.
 
+<p align="center">
+  <img src="assets/home-preview.png" alt="Vista principal de BookTrackr" width="45%" height="300" style="object-fit:cover; margin-right:10px;">
+  <img src="assets/books-preview.png" alt="Detalles de un libro en BookTrackr" width="45%" height="300" style="object-fit:cover;">
+</p>
+
+
 **BookTrackr** es una plataforma que te permite llevar el control de tus libros leídos, pendientes o en curso, y guardar notas o frases que te hayan marcado.  
 El objetivo es ofrecer una experiencia cálida y minimalista, centrada en la lectura y el desarrollo personal.
 
