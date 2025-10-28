@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BookTrackr - Mis Libros</title>
   <link rel="stylesheet" href="../style.css" />
-  <script type="module" src="../main.js" defer></script>
+  <script type="module" src="../main.js"></script>
+  <script type="module" src="../js/search-bar.js"></script>
   <script src="../js/hamburger.js" defer></script>
 </head>
 
@@ -54,7 +55,7 @@
   <main class="books">
     <section>
       <h1>Mis Libros</h1>
-      <input type="text" class="search-bar" placeholder="Buscar libro..." />
+      <input type="text" id="search-bar" placeholder="Buscar libro por título o autor"/>
       <ul class="filter-list">
         <li><a href="#" class="filter-item" data-filter="all">Todos</a></li>
         <li><a href="#" class="filter-item" data-filter="reading">Leyendo</a></li>

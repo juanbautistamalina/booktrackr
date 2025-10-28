@@ -1,7 +1,9 @@
 const filtros = document.querySelectorAll(".filter-item"); // seleccionar todos los filtros
+const searchBar = document.querySelector("#search-bar");
 
 filtros.forEach((filtro) => {
   filtro.addEventListener("click", () => {
+    searchBar.value = ""; // limpiar la barra de búsqueda al aplicar un filtro
     const filtroSeleccionado = filtro.getAttribute("data-filter");
     const libros = document.querySelectorAll(".book-card"); // actualizar la lista de libros cada vez que se filtra
 

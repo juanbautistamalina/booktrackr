@@ -400,7 +400,7 @@ main.books {
     margin-bottom: 1rem;
   }
 
-  & section .search-bar {
+  & section #search-bar {
     display: flex;
     width: 100%;
     max-width: 365px;
