@@ -1,0 +1,110 @@
+[
+  {
+    "id": "b91e3a2f",
+    "title": "Crimen y Castigo",
+    "author": "Fyodor Dostoevsky",
+    "img": "/books/crimen-y-castigo.jpg",
+    "status": "reading",
+    "genre": "Psicología",
+    "notes": "Profundiza en la mente de un hombre que lucha entre la culpa y la redención. Me gusta cómo Dostoevsky muestra los conflictos internos y la tensión moral sin perder ritmo narrativo."
+  },
+  {
+    "id": "a32cf0d9",
+    "title": "Memorias del Subsuelo",
+    "author": "Fyodor Dostoevsky",
+    "img": "/books/memorias-del-subsuelo.jpg",
+    "status": "pending",
+    "genre": "Filosofía",
+    "notes": "Explora la contradicción humana y la autodestrucción del pensamiento excesivo. Lo tengo pendiente porque quiero entender mejor las raíces del existencialismo."
+  },
+  {
+    "id": "e17b92a4",
+    "title": "La Peste",
+    "author": "Albert Camus",
+    "img": "/books/la-peste.jpg",
+    "status": "read",
+    "genre": "Existencialismo",
+    "notes": "Una historia sobre la resistencia humana frente al absurdo. Más allá de la epidemia, muestra la empatía y la fortaleza moral en tiempos difíciles."
+  },
+  {
+    "id": "c48a03e1",
+    "title": "El Extranjero",
+    "author": "Albert Camus",
+    "img": "/books/el-extranjero.jpg",
+    "status": "read",
+    "genre": "Existencialismo",
+    "notes": "Un clásico sobre la indiferencia y el sentido de la vida. Meursault es un protagonista que incomoda, pero refleja la honestidad brutal de Camus."
+  },
+  {
+    "id": "d05fbe7c",
+    "title": "1984",
+    "author": "George Orwell",
+    "img": "/books/1984.jpg",
+    "status": "pending",
+    "genre": "Distopía",
+    "notes": "Una crítica feroz al control político y la manipulación. Lo tengo pendiente porque quiero leerlo con calma y compararlo con Un Mundo Feliz."
+  },
+  {
+    "id": "a9f13e8b",
+    "title": "La Metamorfosis",
+    "author": "Franz Kafka",
+    "img": "/books/la-metamorfosis.jpg",
+    "status": "reading",
+    "genre": "Filosofía",
+    "notes": "Kafka logra que lo absurdo sea profundamente humano. La historia refleja el aislamiento y la pérdida de identidad con una potencia increíble."
+  },
+  {
+    "id": "f62b80c7",
+    "title": "Así habló Zaratustra",
+    "author": "Friedrich Nietzsche",
+    "img": "/books/asi-hablo-zaratustra.jpg",
+    "status": "pending",
+    "genre": "Filosofía",
+    "notes": "Lectura desafiante. Quiero entender mejor las ideas del superhombre y la libertad individual. Es un libro que exige reflexión."
+  },
+  {
+    "id": "b33ef4a1",
+    "title": "El Hombre en Busca de Sentido",
+    "author": "Viktor Frankl",
+    "img": "/books/el-hombre-en-busca-de-sentido.jpg",
+    "status": "reading",
+    "genre": "Psicología",
+    "notes": "Impactante y esperanzador. Frankl combina el sufrimiento con la búsqueda del propósito. Es un libro que te hace replantearte todo."
+  },
+  {
+    "id": "a0df7b5c",
+    "title": "Un Mundo Feliz",
+    "author": "Aldous Huxley",
+    "img": "/books/un-mundo-feliz.jpg",
+    "status": "pending",
+    "genre": "Distopía",
+    "notes": "Distopía moderna que muestra un mundo de placer y control. Me interesa compararla con 1984 por sus enfoques opuestos del poder."
+  },
+  {
+    "id": "e7b190a9",
+    "title": "El Proceso",
+    "author": "Franz Kafka",
+    "img": "/books/el-proceso.jpg",
+    "status": "pending",
+    "genre": "Existencialismo",
+    "notes": "La sensación de injusticia y absurdo es constante. Lo tengo pendiente porque quiero seguir explorando la visión kafkiana del sistema."
+  },
+  {
+    "id": "d71afc29",
+    "title": "Los Hermanos Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "img": "/books/los-hermanos-karamazov.jpg",
+    "status": "pending",
+    "genre": "Filosofía",
+    "notes": "Una obra monumental sobre la moral, la fe y la libertad. Quiero leerla con calma y anotar ideas; todos dicen que cambia la forma de pensar."
+  },
+  {
+    "id": "f18c4d6e",
+    "title": "Siddhartha",
+    "author": "Hermann Hesse",
+    "img": "/books/siddhartha.jpg",
+    "status": "read",
+    "genre": "Espiritualidad",
+    "notes": "Un viaje hacia la paz interior. Lo leí rápido pero me dejó mucha calma. Es un libro que invita a soltar y a vivir con más conciencia."
+  }
+]
