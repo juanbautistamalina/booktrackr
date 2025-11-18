@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookTrackr - Inicio</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="./js/hamburger.js"></script>
+  <script type="module" src="./js/avatar-element.js"></script>
+</head>
+
+<body>
+  <div class="background-image"></div>
+
+  <header class="navbar index">
+    <div class="navbar-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="icon icon-tabler icon-tabler-book">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6l0 13" />
+        <path d="M12 6l0 13" />
+        <path d="M21 6l0 13" />
+      </svg>
+      <h2>BookTrackr</h2>
+    </div>
+
+    <nav class="navbar-links desktop-nav">
+      <ul>
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="./pages/books.html">Mi Biblioteca</a></li>
+        <li><a href="./pages/login.html">Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+    
+    <booktrackr-avatar></booktrackr-avatar>
+
+
+    <button class="hamburger-button" aria-label="Abrir menú">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <div class="mobile-nav">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="./pages/books.html">Mi Biblioteca</a>
+      <a href="./pages/login.html">Iniciar Sesión</a>
+    </div>
+  </header>
+
+  <main class="home">
+    <div class="book-stack-area">
+      <svg class="book-stack-svg" fill="none" viewBox="0 0 350 150" xmlns="http://www.w3.org/2000/svg">
+        <path class="fill-primary-20" d="M20 130 L330 130 L330 145 L20 145 Z"></path>
+        <path class="fill-primary-60" d="M20 130 L330 130 L325 115 L15 115 Z"></path>
+        <rect class="fill-pages-light fill-pages-dark" height="2" width="290" x="25" y="118"></rect>
+
+        <path class="fill-primary-20" d="M40 110 L310 110 L310 125 L40 125 Z"></path>
+        <path class="fill-primary-70" d="M40 110 L310 110 L305 95 L35 95 Z"></path>
+        <rect class="fill-pages-light fill-pages-dark" height="2" width="250" x="45" y="98"></rect>
+
+        <path class="fill-primary-20" d="M70 90 L280 90 L280 105 L70 105 Z"></path>
+        <path class="fill-primary-100" d="M70 90 L280 90 L275 75 L65 75 Z"></path>
+        <rect class="fill-pages-light fill-pages-dark" height="2" width="190" x="75" y="78"></rect>
+      </svg>
+    </div>
+
+    <section>
+      <h1>BookTrackr</h1>
+      <p>Tu biblioteca personal en línea.</p>
+      <button onclick="window.location.href='./pages/books.html'">Entrar a Mi Biblioteca</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BookTrackr. Todos los derechos reservados.</p>
+  </footer>
+</body>
+
+</html>

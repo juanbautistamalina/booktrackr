@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookTrackr - Mis Libros</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script type="module" src="../main.js"></script>
+  <script type="module" src="../js/search-bar.js"></script>
+  <script type="module" src="../js/hamburger.js"></script>
+</head>
+
+<body>
+  <div class="background-image"></div>
+
+  <header class="navbar books">
+    <div class="navbar-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="icon icon-tabler icon-tabler-book">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6l0 13" />
+        <path d="M12 6l0 13" />
+        <path d="M21 6l0 13" />
+      </svg>
+      <h2>BookTrackr</h2>
+    </div>
+
+    <nav class="navbar-links desktop-nav">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../pages/books.html" class="active">Mi Biblioteca</a></li>
+        <li><a href="../pages/login.html">Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+
+    <booktrackr-avatar></booktrackr-avatar>
+
+    <button class="hamburger-button" aria-label="Abrir menú">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <div class="mobile-nav">
+      <a href="../index.html">Inicio</a>
+      <a href="books.html" class="active">Mi Biblioteca</a>
+      <a href="login.html">Iniciar Sesión</a>
+    </div>
+  </header>
+
+  <main class="books">
+    <section>
+      <h1>Mis Libros</h1>
+      <input type="text" id="search-bar" placeholder="Buscar libro por título o autor" />
+
+      <select id="filter-status">
+        <option value="" selected disabled>Estado</option>
+        <option value="all">Todos</option>
+        <option value="reading">Leyendo</option>
+        <option value="read">Leídos</option>
+        <option value="pending">Pendientes</option>
+      </select>
+
+      <!-- <select id="filter-genre">
+        <option value="" selected disabled>Género</option>
+
+        <option value="fiction">Ficción</option>
+        <option value="fantasy">Fantasía</option>
+        <option value="sci-fi">Ciencia Ficción</option>
+        <option value="mystery">Misterio</option>
+        <option value="thriller">Thriller</option>
+        <option value="romance">Romance</option>
+        <option value="horror">Terror</option>
+        <option value="historical-fiction">Ficción Histórica</option>
+
+        <option value="non-fiction">No Ficción</option>
+        <option value="self-help">Autoayuda</option>
+        <option value="psychology">Psicología</option>
+        <option value="philosophy">Filosofía</option>
+        <option value="biography">Biografías</option>
+        <option value="business">Negocios</option>
+        <option value="productivity">Productividad</option>
+        <option value="science">Ciencia</option>
+        <option value="history">Historia</option>
+        <option value="health">Salud</option>
+        <option value="education">Educación</option>
+        <option value="spirituality">Espiritualidad</option>
+
+        <option value="poetry">Poesía</option>
+        <option value="short-stories">Cuentos</option>
+        <option value="young-adult">Juvenil (YA)</option>
+        <option value="children">Infantil</option>
+      </select> -->
+
+
+      <div class="book-list">
+
+      </div>
+
+    </section>
+
+    <div class="add-book-button">
+      <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 5l0 14" />
+          <path d="M5 12l14 0" />
+        </svg>Agregar libro</button>
+    </div>
+
+  </main>
+
+  <div id="modal" class="hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Editar Detalles del Libro</h2>
+      <form>
+        <fieldset>
+          <label for="modal-title">Titulo</label>
+          <input type="text" id="modal-title">
+        </fieldset>
+
+        <fieldset>
+          <label for="modal-author">Autor</label>
+          <input type="text" id="modal-author">
+        </fieldset>
+
+        <div class="group-inline">
+          <fieldset>
+            <label for="modal-status">Estado</label>
+            <select name="" id="modal-status">
+              <option value="reading">Leyendo</option>
+              <option value="read">Leido</option>
+              <option value="pending">Pendiente</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <label for="">Género</label>
+            <input type="text" id="modal-genre">
+          </fieldset>
+        </div>
+
+        <fieldset>
+          <label for="modal-notes">Notas Personales</label>
+          <textarea name="" id="modal-notes"></textarea>
+        </fieldset>
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

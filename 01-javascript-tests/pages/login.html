@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookTrackr - Iniciar Sesión</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script type="module" src="../js/hamburger.js" defer></script>
+  <script type="module" src="../js/avatar-element.js"></script>
+</head>
+
+<body>
+  <header class="navbar login">
+    <div class="navbar-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="icon icon-tabler icon-tabler-book">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6l0 13" />
+        <path d="M12 6l0 13" />
+        <path d="M21 6l0 13" />
+      </svg>
+      <h2>BookTrackr</h2>
+    </div>
+
+    <nav class="navbar-links desktop-nav">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../pages/books.html">Mi Biblioteca</a></li>
+        <li><a href="../pages/login.html" class="active">Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+    
+    <booktrackr-avatar></booktrackr-avatar>
+
+    <button class="hamburger-button" aria-label="Abrir menú">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <div class="mobile-nav">
+      <a href="../index.html">Inicio</a>
+      <a href="books.html">Mi Biblioteca</a>
+      <a href="login.html" class="active">Iniciar Sesión</a>
+    </div>
+  </header>
+
+  <main class="main-form">
+    <form class="form-container">
+      <h1>BookTrackr</h1>
+      <p>Bienvenido de nuevo a tu librería personal.</p>
+
+      <fieldset>
+        <legend>Credenciales</legend>
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Contraseña" required />
+      </fieldset>
+
+      <div class="form-options">
+        <label><input type="checkbox" /> Recordar sesión</label>
+        <a href="#">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <button type="submit">Iniciar Sesión</button>
+
+      <div class="form-footer">
+        <p>¿No tienes cuenta?</p>
+        <a href="#">Registrarse</a>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>
