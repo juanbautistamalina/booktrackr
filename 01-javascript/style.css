@@ -67,11 +67,17 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
 
   & h2 {
     font-size: 1.4rem;
     color: var(--background-light);
     letter-spacing: 1px;
+  }
+
+  & svg {
+    color: var(--primary);
   }
 }
 
