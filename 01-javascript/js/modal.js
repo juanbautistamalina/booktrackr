@@ -2,24 +2,28 @@ const contenedorLibros = document.querySelector(".book-list");
 
 // Variables del Modal
 const modal = document.getElementById("modal");
+
 const modalTitle = modal.querySelector("#modal-title");
 const modalAuthor = modal.querySelector("#modal-author");
 const modalStatus = modal.querySelector("#modal-status");
 const modalNotes = modal.querySelector("#modal-notes");
 const modalGenre = modal.querySelector("#modal-genre");
 const btnSave = modal.querySelector("button");
-let modalMode = "add"; // "add" o "edit"
+
+let modalTitleHeader = modal.querySelector("h2");
+let modalMode = "add"; // valores posibles -> "add" o "edit"
 let selectedCard = null;
 
 // Funcionalidad de Edición de Libros
 contenedorLibros.addEventListener("click", (event) => {
+  modalTitleHeader.textContent = "Editar Detalles del Libro";
   const card = event.target.closest(".book-card");
   if (card) {
     modalMode = "edit";
     selectedCard = card;
     modal.classList.remove("hidden"); // mostrar el modal
 
-    // obtener el titulo, autor, estado y notas del libro y mostrarlos en el modal
+    // obtener los datos del libro y mostrarlos en el modal
     modalTitle.value = card.querySelector(".book-title").textContent;
     modalAuthor.value = card.querySelector(".book-author").textContent;
     modalStatus.value = card.querySelector(".book-status").textContent;
@@ -35,6 +39,7 @@ modal.querySelector(".close").addEventListener("click", () => {
 // Funcionalidad de Agregar un nuevo libro (botón)
 const btnAdd = document.querySelector(".add-book-button");
 btnAdd.addEventListener("click", () => {
+  modalTitleHeader.textContent = "Agregar Nuevo Libro";
   modalMode = "add";
   selectedCard = null;
 
