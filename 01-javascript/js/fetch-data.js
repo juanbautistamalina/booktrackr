@@ -14,6 +14,6 @@ fetch("../js/data.json") // obtener los datos de los libros
             <p class="book-notes hidden">${book.notes}</p>
             <p class="book-genre hidden">${book.genre}</p>
             `;
-            container.appendChild(bookCard);
+            container.appendChild(bookCard); // agregar la tarjeta del libro al contenedor
         })
     })
