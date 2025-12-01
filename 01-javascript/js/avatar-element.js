@@ -1,8 +1,8 @@
 // Web Component Nativo
 class BookTrackrAvatar extends HTMLElement {
   constructor() {
-    super(); // llamar al constructor de HTMLElement
-    this.attachShadow({ mode: 'open' })
+    super(); // llamar al constructor de HTMLElement (todos los elementos html heredan de esa clase)
+    this.attachShadow({ mode: 'open' }) // crear un shadow DOM para encapsular estilos y estructura
   }
 
   createUrl(service, username) {
@@ -36,9 +36,11 @@ class BookTrackrAvatar extends HTMLElement {
     `
   }
 
+  // este método se ejecuta cuando el componente se agrega al DOM
   connectedCallback() {
     this.render()
   }
 }
 
+// Registrar el componente: define("nombre-etiqueta", ClaseDelComponente)
 customElements.define('booktrackr-avatar', BookTrackrAvatar)
