@@ -4,7 +4,7 @@ fetch("../js/data.json") // obtener los datos de los libros
     .then((response) => response.json()) // convertir los datos a json
     .then((books) => { // para cada libro, crear los elementos HTML
         books.forEach(book => {
-            const bookCard = document.createElement("div"); 
+            const bookCard = document.createElement("article"); 
             bookCard.classList.add("book-card"); 
             bookCard.innerHTML = `
             <img src="${book.img}" alt="${book.title}">
