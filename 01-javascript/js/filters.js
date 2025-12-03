@@ -1,5 +1,5 @@
 // Aplicando delegación de eventos para los filtros
-const contenedorFiltros = document.querySelector(".filter-list");
+const contenedorFiltros = document.querySelector("#filter-status");
 contenedorFiltros.addEventListener("click", (event) => {
   event.preventDefault();
   document.querySelector("#search-bar").value = ""; // limpiar la barra de búsqueda al aplicar un filtro
