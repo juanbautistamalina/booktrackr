@@ -5,7 +5,7 @@
     "author": "Fiódor Dostoievski",
     "img": "../img/books/crimen-y-castigo.jpg",
     "status": "reading",
-    "genre": "Psicología",
+    "genre": "Novela",
     "notes": "Profundiza en la mente de un hombre que lucha entre la culpa y la redención. Me gusta cómo Dostoevsky muestra los conflictos internos y la tensión moral sin perder ritmo narrativo."
   },
   {
@@ -14,7 +14,7 @@
     "author": "Fiódor Dostoievski",
     "img": "../img/books/memorias-del-subsuelo.jpg",
     "status": "pending",
-    "genre": "Filosofía",
+    "genre": "Filosofia",
     "notes": "Explora la contradicción humana y la autodestrucción del pensamiento excesivo. Lo tengo pendiente porque quiero entender mejor las raíces del existencialismo."
   },
   {
@@ -23,7 +23,7 @@
     "author": "Albert Camus",
     "img": "../img/books/la-peste.jpg",
     "status": "read",
-    "genre": "Existencialismo",
+    "genre": "Novela",
     "notes": "Una historia sobre la resistencia humana frente al absurdo. Más allá de la epidemia, muestra la empatía y la fortaleza moral en tiempos difíciles."
   },
   {
@@ -32,7 +32,7 @@
     "author": "Albert Camus",
     "img": "../img/books/el-extranjero.jpg",
     "status": "read",
-    "genre": "Existencialismo",
+    "genre": "Novela",
     "notes": "Un clásico sobre la indiferencia y el sentido de la vida. Meursault es un protagonista que incomoda, pero refleja la honestidad brutal de Camus."
   },
   {
@@ -41,7 +41,7 @@
     "author": "George Orwell",
     "img": "../img/books/1984.jpg",
     "status": "pending",
-    "genre": "Distopía",
+    "genre": "Distopia",
     "notes": "Una crítica feroz al control político y la manipulación. Lo tengo pendiente porque quiero leerlo con calma y compararlo con Un Mundo Feliz."
   },
   {
@@ -50,7 +50,7 @@
     "author": "Franz Kafka",
     "img": "../img/books/la-metamorfosis.jpg",
     "status": "reading",
-    "genre": "Filosofía",
+    "genre": "Filosofia",
     "notes": "Kafka logra que lo absurdo sea profundamente humano. La historia refleja el aislamiento y la pérdida de identidad con una potencia increíble."
   },
   {
@@ -59,7 +59,7 @@
     "author": "Friedrich Nietzsche",
     "img": "../img/books/asi-hablo-zaratustra.jpg",
     "status": "pending",
-    "genre": "Filosofía",
+    "genre": "Filosofia",
     "notes": "Lectura desafiante. Quiero entender mejor las ideas del superhombre y la libertad individual. Es un libro que exige reflexión."
   },
   {
@@ -68,7 +68,7 @@
     "author": "Viktor Frankl",
     "img": "../img/books/el-hombre-en-busca-de-sentido.jpg",
     "status": "reading",
-    "genre": "Psicología",
+    "genre": "Psicologia",
     "notes": "Impactante y esperanzador. Frankl combina el sufrimiento con la búsqueda del propósito. Es un libro que te hace replantearte todo."
   },
   {
@@ -77,7 +77,7 @@
     "author": "Aldous Huxley",
     "img": "../img/books/un-mundo-feliz.jpg",
     "status": "pending",
-    "genre": "Distopía",
+    "genre": "Distopia",
     "notes": "Distopía moderna que muestra un mundo de placer y control. Me interesa compararla con 1984 por sus enfoques opuestos del poder."
   },
   {
@@ -86,7 +86,7 @@
     "author": "Franz Kafka",
     "img": "../img/books/el-proceso.jpg",
     "status": "pending",
-    "genre": "Existencialismo",
+    "genre": "Novela",
     "notes": "La sensación de injusticia y absurdo es constante. Lo tengo pendiente porque quiero seguir explorando la visión kafkiana del sistema."
   },
   {
@@ -95,7 +95,7 @@
     "author": "Fiódor Dostoievski",
     "img": "../img/books/los-hermanos-karamazov.jpg",
     "status": "pending",
-    "genre": "Filosofía",
+    "genre": "Novela",
     "notes": "Una obra monumental sobre la moral, la fe y la libertad. Quiero leerla con calma y anotar ideas; todos dicen que cambia la forma de pensar."
   },
   {
@@ -106,5 +106,59 @@
     "status": "read",
     "genre": "Espiritualidad",
     "notes": "Un viaje hacia la paz interior. Lo leí rápido pero me dejó mucha calma. Es un libro que invita a soltar y a vivir con más conciencia."
+  },
+  {
+    "id": 13,
+    "title": "El Psicoanalista",
+    "author": "John Katzenbach",
+    "img": "../img/books/el-psicoanalista.jpg",
+    "status": "pending",
+    "genre": "Novela",
+    "notes": "Thriller psicológico muy conocido. Sigue al doctor Starks mientras enfrenta una amenaza misteriosa que lo obliga a cuestionar su propia identidad y decisiones."
+  },
+  {
+    "id": 14,
+    "title": "Habitos Atomicos",
+    "author": "James Clear",
+    "img": "../img/books/habitos-atomicos.jpg",
+    "status": "pending",
+    "genre": "Autoayuda",
+    "notes": "Un enfoque práctico para construir hábitos positivos y eliminar los negativos mediante pequeñas mejoras diarias."
+  },
+  {
+    "id": 15,
+    "title": "El mito de Sísifo",
+    "author": "Albert Camus",
+    "img": "../img/books/el-mito-de-sisifo.jpg",
+    "status": "pending",
+    "genre": "Ensayo",
+    "notes": "Un ensayo filosófico fundamental donde Camus desarrolla el concepto del absurdo y reflexiona sobre el sentido de la vida."
+  },
+  {
+    "id": 16,
+    "title": "Sapiens: De animales a dioses",
+    "author": "Yuval Noah Harari",
+    "img": "../img/books/sapiens.jpg",
+    "status": "pending",
+    "genre": "Historia",
+    "notes": "Un recorrido por la historia de la humanidad, desde los primeros Homo sapiens hasta la actualidad, explorando cómo las estructuras sociales, económicas y culturales nos moldearon."
+  },
+  {
+    "id": 17,
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "img": "../img/books/steve-jobs.jpg",
+    "status": "pending",
+    "genre": "Biografia",
+    "notes": "La biografía autorizada del cofundador de Apple, que explora su vida, su personalidad y cómo revolucionó la tecnología y la industria del diseño."
+  },
+  {
+    "id": 18,
+    "title": "Harry Potter y la piedra filosofal",
+    "author": "J.K. Rowling",
+    "img": "../img/books/harry-potter.jpg",
+    "status": "pending",
+    "genre": "Fantasia",
+    "notes": "Primera entrega de la famosa saga de Harry Potter. Introduce a los lectores en el mundo mágico de Hogwarts y sus aventuras."
   }
 ]
