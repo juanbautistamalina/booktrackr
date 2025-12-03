@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Crimen y Castigo",
-    "author": "Fyodor Dostoevsky",
+    "author": "Fiódor Dostoievski",
     "img": "../img/books/crimen-y-castigo.jpg",
     "status": "reading",
     "genre": "Psicología",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "title": "Memorias del Subsuelo",
-    "author": "Fyodor Dostoevsky",
+    "author": "Fiódor Dostoievski",
     "img": "../img/books/memorias-del-subsuelo.jpg",
     "status": "pending",
     "genre": "Filosofía",
@@ -92,7 +92,7 @@
   {
     "id": 11,
     "title": "Los Hermanos Karamazov",
-    "author": "Fyodor Dostoevsky",
+    "author": "Fiódor Dostoievski",
     "img": "../img/books/los-hermanos-karamazov.jpg",
     "status": "pending",
     "genre": "Filosofía",
