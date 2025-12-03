@@ -32,6 +32,16 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 5px;
+}
+
 .background-image {
   background: url("./img/src/background.png") center/cover no-repeat;
   position: fixed;
@@ -429,7 +439,7 @@ main.books {
     justify-content: flex-start;
     align-items: center;
     padding: 0 0.5em;
-    gap: 0.1rem;
+    gap: 2rem;
   }
 
   & section #filter-status {
@@ -466,7 +476,7 @@ main.books {
 
   & section {
     & #filter-genre {
-      padding: 0.6em 0.8em 0.7em;
+      padding: 0.6em 2em 0.7em 0.8em;
       height: 2.5em;
       border-radius: 0.4em;
       background-color: transparent;
