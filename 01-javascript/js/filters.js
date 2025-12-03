@@ -10,7 +10,7 @@ contenedorFiltros.addEventListener("click", (event) => {
     const libros = document.querySelectorAll(".book-card"); // actualizar la lista de libros cada vez que se filtra
     
     libros.forEach((libro) => {
-      const estado = libro.querySelector("p.book-status").getAttribute("value");
+      const estado = libro.getAttribute("data-status");
       const isShown = filtroSeleccionado === "all" || filtroSeleccionado === estado;
       libro.classList.toggle("hidden", !isShown);
     });
