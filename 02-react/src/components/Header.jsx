@@ -1,3 +1,5 @@
+import Avatar from "./Avatar.jsx"
+
 export default function Header() {
     return (
         <header className="navbar index">
@@ -17,14 +19,13 @@ export default function Header() {
 
             <nav className="navbar-links desktop-nav">
                 <ul>
-                    <li><a href="index.html" className="active">Inicio</a></li>
-                    <li><a href="./pages/books.html">Mi Biblioteca</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="./pages/books.html" className="active">Mi Biblioteca</a></li>
                     <li><a href="./pages/login.html">Iniciar Sesión</a></li>
                 </ul>
             </nav>
 
-            {/* Hay que agregar el avatar  */}
-            {/* <booktrackr-avatar></booktrackr-avatar> */}
+            <Avatar />
 
             <button className="hamburger-button" aria-label="Abrir menú">
                 <span className="hamburger-line"></span>

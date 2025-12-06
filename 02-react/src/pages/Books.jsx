@@ -9,24 +9,45 @@ export default function Books() {
                 <section>
                     <h1>Mis Libros</h1>
                     <input type="text" id="search-bar" placeholder="Buscar libro por título o autor" />
-                    <ul className="filter-list">
-                        <li><a href="#" className="filter-item" data-filter="all">Todos</a></li>
-                        <li><a href="#" className="filter-item" data-filter="reading">Leyendo</a></li>
-                        <li><a href="#" className="filter-item" data-filter="read">Leídos</a></li>
-                        <li><a href="#" className="filter-item" data-filter="pending">Pendientes</a></li>
-                    </ul>
+
+                    <div className="filter-container">
+                        <ul id="filter-status">
+                            <li><button className="filter-item active" data-filter="all">Todos</button></li>
+                            <li><button className="filter-item" data-filter="reading">Leyendo</button></li>
+                            <li><button className="filter-item" data-filter="read">Leídos</button></li>
+                            <li><button className="filter-item" data-filter="pending">Pendientes</button></li>
+                        </ul>
+
+
+                        <select id="filter-genre">
+                            <option value="">Elegir género</option>
+                            <option value="novela">Novela</option>
+                            <option value="filosofia">Filosofía</option>
+                            <option value="autoayuda">Autoayuda</option>
+                            <option value="ensayo">Ensayo</option>
+                            <option value="historia">Historia</option>
+                            <option value="biografia">Biografía</option>
+                            <option value="cienciaficcion">Ciencia Ficción</option>
+                            <option value="fantasia">Fantasía</option>
+                            <option value="poesia">Poesía</option>
+                            <option value="espiritualidad">Espiritualidad</option>
+                            <option value="distopia">Distopía</option>
+                            <option value="existencialismo">Existencialismo</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
 
                     <div className="book-list">
                         {data.map((book) => {
                             return (
                                 <BookCard
-                                key={book.id}
-                                img={book.img}
-                                titulo={book.title}
-                                autor={book.author}
-                                estado={book.status} 
-                                notas={book.notes}
-                                genero={book.genre} />
+                                    key={book.id}
+                                    img={book.img}
+                                    titulo={book.title}
+                                    autor={book.author}
+                                    estado={book.status}
+                                    genero={book.genre}
+                                    notas={book.notes} />
                             )
                         })}
                     </div>
