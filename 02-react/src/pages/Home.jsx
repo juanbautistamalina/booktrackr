@@ -1,7 +1,7 @@
 export default function Home() {
-    // para usar la prop de fondo de imagen:
     return (
         <>
+            <title>BookTrackr - Inicio</title>
             <div className="background-image"></div>
             <main className="home">
                 <div className="book-stack-area">
@@ -23,7 +23,7 @@ export default function Home() {
                 <section>
                     <h1>BookTrackr</h1>
                     <p>Tu biblioteca personal en línea.</p>
-                    <a>Entrar a Mi Biblioteca</a>
+                    <button onClick={() => window.location.href='./pages/books.html'}>Entrar a Mi Biblioteca</button>
                 </section>
             </main>
         </>

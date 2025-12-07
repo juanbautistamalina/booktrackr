@@ -1,6 +1,7 @@
 export default function Login() {
     return (
         <>
+            <title>BookTrackr - Iniciar Sesión</title>
             <main className="main-form">
                 <form className="form-container">
                     <h1>BookTrackr</h1>
