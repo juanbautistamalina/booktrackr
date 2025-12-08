@@ -85,6 +85,25 @@ body {
     font-size: 1.2rem;
     color: var(--color-muted);
   }
+
+  & button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Times New Roman", serif;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+
+    &:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+  }
 }
 
 /* NAVEGACIÓN */
@@ -449,7 +468,7 @@ main.books {
     margin-bottom: 1rem;
   }
 
-  & section #search-bar {
+  & section .search-bar {
     display: flex;
     width: 100%;
     max-width: 365px;
@@ -475,7 +494,7 @@ main.books {
     gap: 2rem;
   }
 
-  & section #filter-status {
+  & section .filter-status {
     display: flex;
     justify-content: flex-start;
     padding: 0.5em;
@@ -508,7 +527,7 @@ main.books {
   }
 
   & section {
-    & #filter-genre {
+    & .filter-genre {
       padding: 0.6em 2em 0.7em 0.8em;
       height: 2.5em;
       border-radius: 0.4em;
