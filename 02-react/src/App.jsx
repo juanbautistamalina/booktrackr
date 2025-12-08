@@ -10,10 +10,10 @@ function App() {
   return (
     <>
       <Header />
-      {/* <NotFoundPage /> */}
       {/* <Home /> */}
       <Books />
       {/* <Login /> */}
+      {/* <NotFoundPage /> */}
       <Footer />
     </>
   )
