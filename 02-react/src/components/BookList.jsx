@@ -8,11 +8,11 @@ export default function BookList({ books }) {
                     <BookCard
                         key={book.id}
                         img={book.img}
-                        titulo={book.title}
-                        autor={book.author}
-                        estado={book.status}
-                        genero={book.genre}
-                        notas={book.notes} />
+                        title={book.title}
+                        author={book.author}
+                        status={book.status}
+                        genre={book.genre}
+                        notes={book.notes} />
                 )
             })}
         </div>
