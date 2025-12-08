@@ -1,8 +1,11 @@
+import Button from "../components/Button";
+
 export default function Home() {
     return (
         <>
             <title>BookTrackr - Inicio</title>
             <div className="background-image"></div>
+
             <main className="home">
                 <div className="book-stack-area">
                     <svg className="book-stack-svg" fill="none" viewBox="0 0 350 150" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +26,7 @@ export default function Home() {
                 <section>
                     <h1>BookTrackr</h1>
                     <p>Tu biblioteca personal en línea.</p>
-                    <button onClick={() => window.location.href='./pages/books.html'}>Entrar a Mi Biblioteca</button>
+                    <Button>Entrar a Mi Biblioteca</Button>
                 </section>
             </main>
         </>

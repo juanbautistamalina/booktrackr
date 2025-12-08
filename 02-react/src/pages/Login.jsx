@@ -1,7 +1,10 @@
+import Button from "../components/Button"
+
 export default function Login() {
     return (
         <>
             <title>BookTrackr - Iniciar Sesión</title>
+
             <main className="main-form">
                 <form className="form-container">
                     <h1>BookTrackr</h1>
@@ -18,7 +21,7 @@ export default function Login() {
                         <a href="#">¿Olvidaste tu contraseña?</a>
                     </div>
 
-                    <button type="submit">Iniciar Sesión</button>
+                    <Button type="submit">Iniciar Sesión</Button>
 
                     <div className="form-footer">
                         <p>¿No tienes cuenta?</p>
