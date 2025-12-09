@@ -797,6 +797,10 @@ main.books {
         font-family: "Times New Roman", serif;
         transition: all 0.3s ease;
         margin-top: 0.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
 
         &:hover {
           background-color: var(--primary-dark);
@@ -815,6 +819,8 @@ main.books {
         display: flex;
         gap: 1rem;
         width: 100%;
+        justify-content: center;
+        align-items: center;
 
         & fieldset {
           flex: 1;
