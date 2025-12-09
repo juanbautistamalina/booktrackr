@@ -1,4 +1,4 @@
-export default function GenreFilter({ currentGenre, onChange }) {
+export default function GenreFilter({ data, setFilteredBooks, setCurrentGenre }) {
 
   const genres = [
     "novela", "filosofia", "autoayuda", "ensayo", "historia",
@@ -8,13 +8,14 @@ export default function GenreFilter({ currentGenre, onChange }) {
 
   const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
+  const handleChange = (event) => {
+    const genre = event.target.value;
+    setCurrentGenre(genre);
+    setFilteredBooks(genre === "" ? data : data.filter(book => book.genre.toLowerCase() === genre));
+  }
+
   return (
-    <select
-      onChange={(e) => onChange(e.target.value)}
-      value={currentGenre}
-      className="filter-genre"
-      
-      >
+    <select onChange={handleChange} className="filter-genre">
       <option value="">Elegir género</option>
       {genres.map((genre) => (
         <option key={genre} value={genre}>{capitalize(genre)}</option>
