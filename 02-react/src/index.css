@@ -651,10 +651,7 @@ main.books {
   }
 }
 
-
-
 /* ------------------------------------------------ */
-
 
 /* Ventana Modal */
 #modal {
@@ -830,6 +827,30 @@ main.books {
   }
 }
 
+@keyframes modalWindowOpen {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px) rotateX(-8deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03) translateY(0) rotateX(0deg);
+  }
+  100% {
+    transform: scale(1) translateY(0) rotateX(0deg);
+  }
+}
+
+/* Cuando el modal está visible */
+#modal.modal-open {
+  display: flex !important;
+}
+
+/* Aplicar animación SOLO cuando se abre */
+#modal.modal-open .modal-content {
+  animation: modalWindowOpen 0.45s ease forwards;
+  transform-origin: center top;
+}
 
 /* ------------------------------------------------ */
 
