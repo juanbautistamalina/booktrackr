@@ -10,11 +10,17 @@ import Button from '../components/Button.jsx'
 
 export default function Books() {
 
+    // -- Estados (states) --
+    const [filteredBooks, setFilteredBooks] = useState(data);
+
+    // Filtros
     const [currentStatus, setCurrentStatus] = useState("all");
     const [currentGenre, setCurrentGenre] = useState("");
-    // const [searchQuery, setSearchQuery] = useState("");
+    const [searchQuery, setSearchQuery] = useState("");
 
-    const [filteredBooks, setFilteredBooks] = useState(data);
+    // Modal
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedBook, setSelectedBook] = useState(null);
 
     return (
         <>
@@ -25,23 +31,34 @@ export default function Books() {
                 <section>
                     <h1>Mis Libros</h1>
 
-                    <SearchBar/>
+                    <SearchBar
+                        data={data}
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                        setFilteredBooks={setFilteredBooks}
+                    />
 
                     <div className="filter-container">
                         <StatusFilter
+                            data={data}
                             currentStatus={currentStatus}
-                            onChange={setCurrentStatus}
+                            setCurrentStatus={setCurrentStatus}
                             setFilteredBooks={setFilteredBooks}
                         />
 
                         <GenreFilter
-                            currentGenre={currentGenre}
-                            onChange={setCurrentGenre}
+                            data={data}
+                            setCurrentGenre={setCurrentGenre}
                             setFilteredBooks={setFilteredBooks}
                         />
                     </div>
 
-                    <BookList books={filteredBooks} />
+                    <BookList
+                        books={filteredBooks}
+                        setIsModalOpen={setIsModalOpen}
+                        selectedBook={selectedBook}
+                        setSelectedBook={setSelectedBook}
+                        />
 
                 </section>
 
@@ -59,7 +76,7 @@ export default function Books() {
                 </div>
             </main>
 
-            <Modal />
+            <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
 
         </>
     )
