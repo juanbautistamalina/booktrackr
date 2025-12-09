@@ -1,29 +1,32 @@
 import Button from "./Button"
 
-export default function Modal({isModalOpen, setIsModalOpen}) {
+export default function Modal({isModalOpen, setIsModalOpen, selectedBook}) {
+
+    const {img, title, author, status, genre, notes} = selectedBook;
+
     return (
         <div id="modal" className={isModalOpen ? 'modal-open' : 'hidden'}>
             <div className="modal-content">
                 <span onClick={() => setIsModalOpen(false)} className="close">&times;</span>
 
                 <div className="modal-body">
-                    <img src="/books/crimen-y-castigo.jpg" alt="" />
+                    <img src={img} alt={`Portada del libro ${title}`}/>
                     <form>
                         <h2>Editar Detalles del Libro</h2>
                         <fieldset>
                             <label htmlFor="modal-title">Titulo</label>
-                            <input type="text" id="modal-title" />
+                            <input type="text" id="modal-title" value={title}/>
                         </fieldset>
 
                         <fieldset>
                             <label htmlFor="modal-author">Autor</label>
-                            <input type="text" id="modal-author" />
+                            <input type="text" id="modal-author" value={author}/>
                         </fieldset>
 
                         <div className="group-inline">
                             <fieldset>
                                 <label htmlFor="modal-status">Estado</label>
-                                <select name="" id="modal-status">
+                                <select name="" id="modal-status" value={status}>
                                     <option value="reading">Leyendo</option>
                                     <option value="read">Leido</option>
                                     <option value="pending">Pendiente</option>
@@ -32,18 +35,18 @@ export default function Modal({isModalOpen, setIsModalOpen}) {
 
                             <fieldset>
                                 <label htmlFor="modal-genre">Género</label>
-                                <input type="text" id="modal-genre" />
+                                <input type="text" id="modal-genre" value={genre} />
                             </fieldset>
                         </div>
 
                         <fieldset>
                             <label htmlFor="modal-notes">Notas Personales</label>
-                            <textarea name="" id="modal-notes"></textarea>
+                            <textarea name="" id="modal-notes" value={notes}></textarea>
                         </fieldset>
 
                         <div className="group-inline">
 
-                            <Button type="submit">
+                            <Button type="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-device-floppy"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" /><path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M14 4l0 4l-6 0l0 -4" /></svg>
                                 Guardar
                             </Button>

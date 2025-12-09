@@ -1,9 +1,10 @@
 import BookCard from '../components/BookCard.jsx'
 
-export default function BookList({ books, setIsModalOpen, selectedBook, setSelectedBook }) {
+export default function BookList({ books, setIsModalOpen, setSelectedBook }) {
     
-    const handleClick = () => {
+    const handleClick = (book) => {
         setIsModalOpen(true);
+        setSelectedBook(book);
     }
     
     return (
@@ -11,7 +12,7 @@ export default function BookList({ books, setIsModalOpen, selectedBook, setSelec
             {books.map((book) => {
                 return (
                     <BookCard
-                        onClick={handleClick}
+                        onClick={() => handleClick(book)}
                         key={book.id}
                         img={book.img}
                         title={book.title}

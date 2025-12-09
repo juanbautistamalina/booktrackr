@@ -20,7 +20,7 @@ export default function Books() {
 
     // Modal
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedBook, setSelectedBook] = useState(null);
+    const [selectedBook, setSelectedBook] = useState("");
 
     return (
         <>
@@ -56,9 +56,8 @@ export default function Books() {
                     <BookList
                         books={filteredBooks}
                         setIsModalOpen={setIsModalOpen}
-                        selectedBook={selectedBook}
                         setSelectedBook={setSelectedBook}
-                        />
+                    />
 
                 </section>
 
@@ -76,7 +75,11 @@ export default function Books() {
                 </div>
             </main>
 
-            <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <Modal
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+                selectedBook={selectedBook}
+            />
 
         </>
     )
