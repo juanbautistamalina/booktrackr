@@ -11,6 +11,7 @@ import Button from '../components/Button.jsx'
 export default function Books() {
 
     // -- Estados (states) --
+    const [dataBooks, setDataBooks] = useState(data)
     const [filteredBooks, setFilteredBooks] = useState(data);
 
     // Filtros
@@ -21,6 +22,13 @@ export default function Books() {
     // Modal
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedBook, setSelectedBook] = useState("");
+
+    // Resetear valores al cerrar el modal
+    // const closeModal = () => {
+    //     setIsModalOpen(false);
+    //     setSelectedBook("");
+    // }
+
 
     return (
         <>
@@ -62,7 +70,7 @@ export default function Books() {
                 </section>
 
                 <div className="add-book-button">
-                    <Button >
+                    <Button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                             className="icon icon-tabler icons-tabler-outline icon-tabler-plus">
@@ -76,6 +84,8 @@ export default function Books() {
             </main>
 
             <Modal
+                dataBooks={dataBooks}
+                setDataBooks={setDataBooks}
                 isModalOpen={isModalOpen}
                 setIsModalOpen={setIsModalOpen}
                 selectedBook={selectedBook}
