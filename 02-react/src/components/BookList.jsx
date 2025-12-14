@@ -1,3 +1,4 @@
+import styles from "./BookList.module.css"
 import BookCard from '../components/BookCard.jsx'
 
 export default function BookList({ books, setIsModalOpen, setSelectedBook }) {
@@ -8,7 +9,7 @@ export default function BookList({ books, setIsModalOpen, setSelectedBook }) {
     }
 
     return (
-        <div className="book-list">
+        <div className={styles.bookList}>
 
             {books.length === 0 ? (
                 <p>No hay libros disponibles.</p>
