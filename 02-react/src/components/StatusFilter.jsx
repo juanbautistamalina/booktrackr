@@ -1,3 +1,5 @@
+import styles from "./StatusFilter.module.css"
+
 export default function StatusFilter({ data, setFilteredBooks, currentStatus, setCurrentStatus }) {
     const options = [
         { value: "all", label: "Todos" },
@@ -13,11 +15,11 @@ export default function StatusFilter({ data, setFilteredBooks, currentStatus, se
     }
 
     return (
-        <ul className="filter-status">
+        <ul className={styles.filterStatus}>
             {options.map(opt => (
                 <li key={opt.value}>
                     <button
-                        className={`filter-item ${currentStatus === opt.value ? "active" : ""}`}
+                        className={`filterItem ${currentStatus === opt.value ? styles.active : ""}`}
                         onClick={() => handleClick(opt.value)}
                     >
                         {opt.label}
