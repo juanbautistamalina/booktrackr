@@ -1,0 +1,55 @@
+.bookCard {
+  width: 170px;
+  height: 250px;
+  border-radius: 1em;
+  border: 1px solid var(--color-line);
+  padding: 0.5em;
+  margin-bottom: 5em;
+  cursor: pointer;
+  text-align: left;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px var(--primary-dark);
+  }
+
+  & img {
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 0.4em;
+  }
+
+  & h2 {
+    font-size: 1rem;
+    color: var(--background-light);
+    margin: 1em 0 0.2em;
+  }
+
+  & p {
+    font-size: 0.8em;
+    color: var(--color-muted);
+  }
+
+  & .bookStatus {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    padding: 0.5em 0.5em;
+    border-radius: 0.4em;
+    background-color: var(--primary-dark);
+    color: var(--background-light);
+  }
+
+  & .bookNotes {
+    display: none;
+  }
+
+  & .default-cover {
+    aspect-ratio: 2/3;
+  }
+}
