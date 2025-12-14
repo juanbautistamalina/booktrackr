@@ -1,3 +1,5 @@
+import styles from "./GenreFilter.module.css"
+
 export default function GenreFilter({ data, setFilteredBooks, setCurrentGenre }) {
 
   const genres = [
@@ -15,7 +17,7 @@ export default function GenreFilter({ data, setFilteredBooks, setCurrentGenre })
   }
 
   return (
-    <select onChange={handleChange} className="filter-genre">
+    <select onChange={handleChange} className={styles.filterGenre}>
       <option value="">Elegir género</option>
       {genres.map((genre) => (
         <option key={genre} value={genre}>{capitalize(genre)}</option>
