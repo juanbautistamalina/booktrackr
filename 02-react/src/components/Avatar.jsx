@@ -1,3 +1,5 @@
+import styles from "./Avatar.module.css"
+
 export default function Avatar({ service = "github", username = "juanbautistamalina", size = "45" }) {
 
     const createUrl = (service, username) => `https://unavatar.io/${service}/${username}`
@@ -7,7 +9,7 @@ export default function Avatar({ service = "github", username = "juanbautistamal
         <img
             src={url}
             alt={`Avatar de ${username}`}
-            className="avatar"
+            className={styles.avatar}
             style={{width: `${size}px`, height: `${size}px`}}
         />
     )
