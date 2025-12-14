@@ -1,3 +1,5 @@
+import styles from "./SearchBar.module.css"
+
 export default function SearchBar({ data, setFilteredBooks, searchQuery, setSearchQuery }) {
     
     const handleInputChange = (event) => {
@@ -14,7 +16,7 @@ export default function SearchBar({ data, setFilteredBooks, searchQuery, setSear
         <input
             onChange={handleInputChange}
             value={searchQuery}
-            className="search-bar"
+            className={styles.searchBar}
             type="text"
             placeholder="Buscar libro por título o autor"
         />
