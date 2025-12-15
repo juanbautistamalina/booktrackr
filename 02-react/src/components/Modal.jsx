@@ -30,7 +30,7 @@ export default function Modal({ isModalOpen, setIsModalOpen, selectedBook }) {
                         <div className={styles.groupInline}>
                             <fieldset>
                                 <label htmlFor="modal-status">Estado</label>
-                                <select name="" id="modal-status" defaultValue={status}>
+                                <select id="modal-status" defaultValue={status}>
                                     <option value="reading">Leyendo</option>
                                     <option value="read">Leido</option>
                                     <option value="pending">Pendiente</option>
@@ -60,7 +60,7 @@ export default function Modal({ isModalOpen, setIsModalOpen, selectedBook }) {
 
                         <fieldset>
                             <label htmlFor="modal-notes">Notas Personales</label>
-                            <textarea name="" id="modal-notes" defaultValue={notes}></textarea>
+                            <textarea id="modal-notes" defaultValue={notes}></textarea>
                         </fieldset>
 
                         <div className={styles.groupInline}>

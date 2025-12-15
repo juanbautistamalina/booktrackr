@@ -25,6 +25,7 @@ export default function GenreFilter({ currentGenre, setCurrentGenre }) {
 
   return (
     <select
+      name="genre"
       value={currentGenre}
       onChange={handleChange}
       className={styles.filterGenre}

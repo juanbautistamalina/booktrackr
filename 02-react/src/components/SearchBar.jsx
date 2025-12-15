@@ -8,6 +8,7 @@ export default function SearchBar({ searchQuery, setSearchQuery }) {
     
     return (
         <input
+            name="search"
             onChange={handleInputChange}
             value={searchQuery}
             className={styles.searchBar}
