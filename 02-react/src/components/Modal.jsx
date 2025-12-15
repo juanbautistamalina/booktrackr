@@ -1,17 +1,11 @@
 import styles from "./Modal.module.css"
 import Button from "./Button"
 
-export default function Modal({ dataBooks, setDataBooks, isModalOpen, setIsModalOpen, selectedBook }) {
+export default function Modal({ isModalOpen, setIsModalOpen, selectedBook }) {
+
+    if (!isModalOpen || !selectedBook) return null;
 
     const { img, title, author, status, genre, notes } = selectedBook;
-
-    // Agregar funcionalidad para editar los campos del libro en el modal (usando los states)
-    const handleEdit = () => {
-        // setDataBooks(updatedBooks);
-        setIsModalOpen(false);
-    }
-
-
 
     return (
         <div className={`${styles.modal} ${isModalOpen ? styles.modalOpen : styles.hidden}`}>
@@ -45,25 +39,21 @@ export default function Modal({ dataBooks, setDataBooks, isModalOpen, setIsModal
 
                             <fieldset>
                                 <label htmlFor="modal-genre">Género</label>
-                                <input type="text" id="modal-genre" defaultValue={genre} />
-
-
-                                {/* Cambiar el input por un select con el género del libro */}
-                                {/* <select id="modal-genre" defaultValue={genre}>
-                                    <option value="novela">Novela</option>
-                                    <option value="filosofia">Filosofía</option>
-                                    <option value="autoayuda">Autoayuda</option>
-                                    <option value="ensayo">Ensayo</option>
-                                    <option value="historia">Historia</option>
-                                    <option value="biografia">Biografía</option>
-                                    <option value="cienciaficcion">Ciencia Ficción</option>
-                                    <option value="fantasia">Fantasía</option>
-                                    <option value="poesia">Poesía</option>
-                                    <option value="espiritualidad">Espiritualidad</option>
-                                    <option value="distopia">Distopía</option>
-                                    <option value="existencialismo">Existencialismo</option>
-                                    <option value="otro">Otro</option>
-                                </select> */}
+                                <select id="modal-genre" defaultValue={genre}>
+                                    <option value="Novela">Novela</option>
+                                    <option value="Filosofia">Filosofía</option>
+                                    <option value="Autoayuda">Autoayuda</option>
+                                    <option value="Ensayo">Ensayo</option>
+                                    <option value="Historia">Historia</option>
+                                    <option value="Biografia">Biografía</option>
+                                    <option value="Cienciaficcion">Ciencia Ficción</option>
+                                    <option value="Fantasia">Fantasía</option>
+                                    <option value="Poesia">Poesía</option>
+                                    <option value="Espiritualidad">Espiritualidad</option>
+                                    <option value="Distopia">Distopía</option>
+                                    <option value="Existencialismo">Existencialismo</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
 
                             </fieldset>
                         </div>
@@ -75,7 +65,7 @@ export default function Modal({ dataBooks, setDataBooks, isModalOpen, setIsModal
 
                         <div className={styles.groupInline}>
 
-                            <Button type="button" onClick={handleEdit}>
+                            <Button type="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-device-floppy"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" /><path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M14 4l0 4l-6 0l0 -4" /></svg>
                                 Guardar
                             </Button>
