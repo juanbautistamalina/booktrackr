@@ -1,6 +1,7 @@
 import styles from "./StatusFilter.module.css"
 
-export default function StatusFilter({ data, setFilteredBooks, currentStatus, setCurrentStatus }) {
+export default function StatusFilter({ currentStatus, setCurrentStatus }) {
+    
     const options = [
         { value: "all", label: "Todos" },
         { value: "reading", label: "Leyendo" },
@@ -10,8 +11,6 @@ export default function StatusFilter({ data, setFilteredBooks, currentStatus, se
 
     const handleClick = (status) => {
         setCurrentStatus(status);
-        setFilteredBooks(status === "all" ? data : data.filter(book => book.status === status));
-
     }
 
     return (
