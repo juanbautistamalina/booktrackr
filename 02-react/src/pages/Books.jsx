@@ -10,9 +10,7 @@ import Button from '../components/Button.jsx'
 
 export default function Books() {
 
-    // -- Estados (states) --
-    const [dataBooks, setDataBooks] = useState(data)
-    const [filteredBooks, setFilteredBooks] = useState(data);
+    const [books, setBooks] = useState(data);
 
     // Filtros
     const [currentStatus, setCurrentStatus] = useState("all");
@@ -21,7 +19,29 @@ export default function Books() {
 
     // Modal
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedBook, setSelectedBook] = useState("");
+    const [selectedBook, setSelectedBook] = useState(null);
+
+
+    const filteredBooks = books.filter(book => {
+
+        // matchesSearch → true si el texto buscado aparece en el título o en el autor
+        const matchesSearch =
+            book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            book.author.toLowerCase().includes(searchQuery.toLowerCase())
+
+        // matchesStatus → true si el filtro está en "all" o si el estado del libro coincide con el seleccionado
+        const matchesStatus =
+            currentStatus === "all" || book.status === currentStatus
+
+        // matchesGenre → true si no hay género seleccionado o si el género del libro coincide con el seleccionado
+        const matchesGenre =
+            currentGenre === "" || book.genre === currentGenre
+
+        // El libro se muestra SOLO si cumple TODAS las condiciones
+        return matchesSearch && matchesStatus && matchesGenre
+    })
+
+
 
     // Resetear valores al cerrar el modal
     // const closeModal = () => {
@@ -40,24 +60,19 @@ export default function Books() {
                     <h1>Mis Libros</h1>
 
                     <SearchBar
-                        data={data}
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}
-                        setFilteredBooks={setFilteredBooks}
                     />
 
                     <div className="filter-container">
                         <StatusFilter
-                            data={data}
                             currentStatus={currentStatus}
                             setCurrentStatus={setCurrentStatus}
-                            setFilteredBooks={setFilteredBooks}
                         />
 
                         <GenreFilter
-                            data={data}
+                            currentGenre={currentGenre}
                             setCurrentGenre={setCurrentGenre}
-                            setFilteredBooks={setFilteredBooks}
                         />
                     </div>
 
@@ -84,8 +99,8 @@ export default function Books() {
             </main>
 
             <Modal
-                dataBooks={dataBooks}
-                setDataBooks={setDataBooks}
+                books={books}
+                setBooks={setBooks}
                 isModalOpen={isModalOpen}
                 setIsModalOpen={setIsModalOpen}
                 selectedBook={selectedBook}
