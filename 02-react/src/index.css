@@ -87,7 +87,7 @@ body {
   gap: 0.5rem;
   cursor: pointer;
   text-decoration: none;
-
+  
   & h2 {
     font-size: 1.4rem;
     color: var(--background-light);
@@ -96,6 +96,12 @@ body {
 
   & svg {
     color: var(--primary);
+  }
+
+  &:hover {
+    h2, svg {
+      opacity: 0.8;
+    }
   }
 }
 
@@ -274,7 +280,6 @@ main.home {
   }
 }
 
-
 /* 2) BOOKS PAGE (books.html) */
 main.books {
   flex: 1;
@@ -328,7 +333,6 @@ main.books {
     }
   }
 }
-
 
 /* 3) LOGIN PAGE (login.html) */
 .main-form {
@@ -459,7 +463,6 @@ main.books {
   }
 }
 
-
 /* 404 Page */
 .not-found-page {
   flex: 1;
@@ -504,6 +507,41 @@ main.books {
 
 /* Estilos para Móviles */
 @media (max-width: 768px) {
+  main.books section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+
+    h1 {
+      text-align: center;
+    }
+
+    input {
+      margin: 1.5em auto;
+    }
+
+    .filter-container {
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+
+      ul {
+        border: none;
+        padding: 0;
+
+        button {
+          border-bottom-left-radius: 0.4em;
+          border-bottom-right-radius: 0.4em;
+        }
+      }
+
+      select {
+        margin-bottom: 2em;
+      }
+    }
+  }
+
   .navbar {
     justify-content: space-between;
     padding: 0.8rem 1.5rem;

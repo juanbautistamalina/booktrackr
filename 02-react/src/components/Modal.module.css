@@ -194,3 +194,19 @@
   animation: modalWindowOpen 0.45s ease forwards;
   transform-origin: center top;
 }
+
+
+@media (max-width: 768px) {
+
+  .modalBody {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    flex-direction: column !important;
+  }
+
+
+}
