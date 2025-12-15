@@ -1,26 +1,37 @@
 import styles from "./GenreFilter.module.css"
 
-export default function GenreFilter({ data, setFilteredBooks, setCurrentGenre }) {
+export default function GenreFilter({ currentGenre, setCurrentGenre }) {
 
   const genres = [
-    "novela", "filosofia", "autoayuda", "ensayo", "historia",
-    "biografia", "cienciaficcion", "fantasia", "poesia",
-    "espiritualidad", "distopia", "existencialismo", "otro"
+    "Novela",
+    "Filosofia",
+    "Autoayuda",
+    "Ensayo",
+    "Historia",
+    "Biografia",
+    "Ciencia ficcion",
+    "Fantasia",
+    "Poesia",
+    "Espiritualidad",
+    "Distopia",
+    "Existencialismo",
+    "Otro"
   ];
-
-  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
   const handleChange = (event) => {
     const genre = event.target.value;
     setCurrentGenre(genre);
-    setFilteredBooks(genre === "" ? data : data.filter(book => book.genre.toLowerCase() === genre));
   }
 
   return (
-    <select onChange={handleChange} className={styles.filterGenre}>
+    <select
+      value={currentGenre}
+      onChange={handleChange}
+      className={styles.filterGenre}
+    >
       <option value="">Elegir género</option>
       {genres.map((genre) => (
-        <option key={genre} value={genre}>{capitalize(genre)}</option>
+        <option key={genre} value={genre}>{genre}</option>
       ))}
     </select>
   )
