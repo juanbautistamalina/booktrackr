@@ -22,6 +22,7 @@ export default function Books() {
     const [selectedBook, setSelectedBook] = useState(null);
 
 
+
     const filteredBooks = books.filter(book => {
 
         // matchesSearch → true si el texto buscado aparece en el título o en el autor
@@ -41,15 +42,17 @@ export default function Books() {
         return matchesSearch && matchesStatus && matchesGenre
     })
 
+    const handleEditBook = (book) => {
+        setSelectedBook(book);
+        setIsModalOpen(true);
+    };
 
+    const handleAddBook = () => {
+        setSelectedBook(null);
+        setIsModalOpen(true);
+    }
 
-    // Resetear valores al cerrar el modal
-    // const closeModal = () => {
-    //     setIsModalOpen(false);
-    //     setSelectedBook("");
-    // }
-
-
+    
     return (
         <>
             <title>BookTrackr - Mis Libros</title>
@@ -78,14 +81,12 @@ export default function Books() {
 
                     <BookList
                         books={filteredBooks}
-                        setIsModalOpen={setIsModalOpen}
-                        setSelectedBook={setSelectedBook}
+                        onBookClick={handleEditBook}
                     />
-
                 </section>
 
                 <div className="add-book-button">
-                    <Button>
+                    <Button onClick={handleAddBook}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                             className="icon icon-tabler icons-tabler-outline icon-tabler-plus">
@@ -99,13 +100,11 @@ export default function Books() {
             </main>
 
             <Modal
-                books={books}
                 setBooks={setBooks}
                 isModalOpen={isModalOpen}
                 setIsModalOpen={setIsModalOpen}
                 selectedBook={selectedBook}
             />
-
         </>
     )
 }
