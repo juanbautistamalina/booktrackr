@@ -1,7 +1,9 @@
 import styles from "./BookCard.module.css"
 
-export default function BookCard({ img, title, author, status, notes, genre, onClick }) {
+export default function BookCard({book, onClick}) {
 
+    const { img, title, author, status, notes, genre } = book;
+ 
     const statusText = status === "reading" ? "Leyendo"
                      : status === "read"    ? "Leído"
                      :                        "Pendiente";
