@@ -12,12 +12,10 @@ export default function Books() {
 
     const [books, setBooks] = useState(data);
 
-    // Filtros
     const [currentStatus, setCurrentStatus] = useState("all");
     const [currentGenre, setCurrentGenre] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
 
-    // Modal
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedBook, setSelectedBook] = useState(null);
 
@@ -42,6 +40,18 @@ export default function Books() {
         return matchesSearch && matchesStatus && matchesGenre
     })
 
+    const handleSearch = (textToFilter) => {
+        setSearchQuery(textToFilter);
+    }
+
+    const handleStatusFilter = (status) => {
+        setCurrentStatus(status);
+    }
+
+    const handleGenreFilter = (genre) => {
+        setCurrentGenre(genre);
+    }
+
     const handleEditBook = (book) => {
         setSelectedBook(book);
         setIsModalOpen(true);
@@ -52,37 +62,28 @@ export default function Books() {
         setIsModalOpen(true);
     }
 
-    
+
     return (
         <>
             <title>BookTrackr - Mis Libros</title>
             <div className="background-image"></div>
-
             <main className="books">
-                <section>
+                <section className={`${isModalOpen ? "no-scroll" : " "}`}>
+
                     <h1>Mis Libros</h1>
 
-                    <SearchBar
-                        searchQuery={searchQuery}
-                        setSearchQuery={setSearchQuery}
-                    />
+                    <SearchBar onSearch={handleSearch} />
 
                     <div className="filter-container">
                         <StatusFilter
                             currentStatus={currentStatus}
-                            setCurrentStatus={setCurrentStatus}
+                            onStatusChange={handleStatusFilter}
                         />
 
-                        <GenreFilter
-                            currentGenre={currentGenre}
-                            setCurrentGenre={setCurrentGenre}
-                        />
+                        <GenreFilter onGenreChange={handleGenreFilter} />
                     </div>
 
-                    <BookList
-                        books={filteredBooks}
-                        onBookClick={handleEditBook}
-                    />
+                    <BookList books={filteredBooks} onBookClick={handleEditBook} />
                 </section>
 
                 <div className="add-book-button">
@@ -99,6 +100,7 @@ export default function Books() {
                 </div>
             </main>
 
+            {/* Organizar el contenido del componente adecuadamente */}
             <Modal
                 setBooks={setBooks}
                 isModalOpen={isModalOpen}

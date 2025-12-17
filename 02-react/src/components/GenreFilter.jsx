@@ -1,6 +1,6 @@
 import styles from "./GenreFilter.module.css"
 
-export default function GenreFilter({ currentGenre, setCurrentGenre }) {
+export default function GenreFilter({ onGenreChange }) {
 
   const genres = [
     "Novela",
@@ -18,19 +18,14 @@ export default function GenreFilter({ currentGenre, setCurrentGenre }) {
     "Otro"
   ];
 
-  const handleChange = (event) => {
+  const handleGenreChange = (event) => {
     const genre = event.target.value;
-    setCurrentGenre(genre);
+    onGenreChange(genre);
   }
 
   return (
-    <select
-      name="genre"
-      value={currentGenre}
-      onChange={handleChange}
-      className={styles.filterGenre}
-    >
-      <option value="">Elegir género</option>
+    <select onChange={handleGenreChange} className={styles.filterGenre} name="genre">
+      <option value="">Todos los géneros</option>
       {genres.map((genre) => (
         <option key={genre} value={genre}>{genre}</option>
       ))}
