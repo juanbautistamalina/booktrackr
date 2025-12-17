@@ -286,6 +286,11 @@ main.books {
   width: 100%;
   padding: 2rem 0;
 
+  .no-scroll {
+    height: 60vh;
+    overflow: hidden;
+  }
+
   & section h1 {
     text-align: left;
     padding: 0 0.5em;
