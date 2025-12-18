@@ -7,7 +7,6 @@ import GenreFilter from '../components/GenreFilter.jsx'
 import Modal from '../components/Modal.jsx'
 import Button from '../components/Button.jsx'
 
-
 export default function Books() {
 
     const [books, setBooks] = useState(data);
@@ -20,19 +19,14 @@ export default function Books() {
     const [selectedBook, setSelectedBook] = useState(null);
 
 
-
     const filteredBooks = books.filter(book => {
-
-        // matchesSearch → true si el texto buscado aparece en el título o en el autor
         const matchesSearch =
             book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             book.author.toLowerCase().includes(searchQuery.toLowerCase())
 
-        // matchesStatus → true si el filtro está en "all" o si el estado del libro coincide con el seleccionado
         const matchesStatus =
             currentStatus === "all" || book.status === currentStatus
 
-        // matchesGenre → true si no hay género seleccionado o si el género del libro coincide con el seleccionado
         const matchesGenre =
             currentGenre === "" || book.genre === currentGenre
 
@@ -40,8 +34,8 @@ export default function Books() {
         return matchesSearch && matchesStatus && matchesGenre
     })
 
-    const handleSearch = (textToFilter) => {
-        setSearchQuery(textToFilter);
+    const handleSearch = (text) => {
+        setSearchQuery(text);
     }
 
     const handleStatusFilter = (status) => {
@@ -62,6 +56,21 @@ export default function Books() {
         setIsModalOpen(true);
     }
 
+    const handleSaveBook = (bookData) => {
+        setBooks(prevBooks =>
+            selectedBook
+                ? prevBooks.map(book => book.id === selectedBook.id ? bookData : book) // editar libro existente
+                : [bookData, ...prevBooks] // agregar un nuevo libro
+        )
+    }
+
+    const handleDeleteBook = (id) => {
+        setBooks(prevBooks => prevBooks.filter(book => book.id !== id));
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false)
+    }
 
     return (
         <>
@@ -100,12 +109,12 @@ export default function Books() {
                 </div>
             </main>
 
-            {/* Organizar el contenido del componente adecuadamente */}
             <Modal
-                setBooks={setBooks}
                 isModalOpen={isModalOpen}
-                setIsModalOpen={setIsModalOpen}
+                onCloseModal={handleCloseModal}
                 selectedBook={selectedBook}
+                onSaveBook={handleSaveBook}
+                onDeleteBook={handleDeleteBook}
             />
         </>
     )
