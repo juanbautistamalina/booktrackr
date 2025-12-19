@@ -7,7 +7,7 @@ export default function NotFoundPage() {
             <main className="not-found-page">
                 <h1>404 - Página no encontrada</h1>
                 <p>Lo sentimos, la página que buscas no existe.</p>
-                <Button>Volver al inicio</Button>
+                <Button onClick={() => window.location.href = "/"}>Volver al inicio</Button>
             </main>
         </>
     )

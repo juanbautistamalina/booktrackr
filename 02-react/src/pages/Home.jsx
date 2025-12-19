@@ -26,7 +26,7 @@ export default function Home() {
                 <section>
                     <h1>BookTrackr</h1>
                     <p>Tu biblioteca personal en línea.</p>
-                    <Button>Entrar a Mi Biblioteca</Button>
+                    <Button onClick={() => window.location.href = "/books"}>Entrar a Mi Biblioteca</Button>
                 </section>
             </main>
         </>

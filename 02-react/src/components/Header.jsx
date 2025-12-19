@@ -4,7 +4,7 @@ import Avatar from "./Avatar.jsx"
 export default function Header() {
     return (
         <header className="navbar index">
-            <a href="index.html" className="navbar-logo">
+            <a href="/" className="navbar-logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                     className="icon icon-tabler icon-tabler-book">
@@ -20,9 +20,9 @@ export default function Header() {
 
             <nav className="navbar-links desktop-nav">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="./pages/books.html" className="active">Mi Biblioteca</a></li>
-                    <li><a href="./pages/login.html">Iniciar Sesión</a></li>
+                    <li><a href="/" className="active">Inicio</a></li>
+                    <li><a href="/books">Mi Biblioteca</a></li>
+                    <li><a href="/login">Iniciar Sesión</a></li>
                 </ul>
             </nav>
 
