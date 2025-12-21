@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import data from '../data.json'
 import BookList from '../components/BookList.jsx'
 import SearchBar from "../components/SearchBar.jsx"
@@ -71,6 +71,16 @@ export default function Books() {
     const handleCloseModal = () => {
         setIsModalOpen(false)
     }
+
+    useEffect(() => {
+        {
+            isModalOpen && selectedBook
+                ? document.title = `BookTrackr - ${selectedBook.title}`
+                : document.title = `BookTrackr - Agregar Libro`
+        }
+        if (!isModalOpen) document.title = "BookTrackr - Mis Libros";
+
+    }, [isModalOpen, selectedBook])
 
     return (
         <>
