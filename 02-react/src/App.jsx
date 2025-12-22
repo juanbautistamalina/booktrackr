@@ -4,19 +4,27 @@ import Home from './pages/Home.jsx'
 import Books from './pages/Books.jsx'
 import Login from "./pages/Login.jsx"
 import NotFoundPage from "./pages/404.jsx"
+import useRouter from "./hooks/useRouter.jsx"
 
 function App() {
 
-  const currentPath = window.location.pathname;
+  const { currentPath } = useRouter();
+
+  let page;
+  if (currentPath === "/") {
+    page = <Home />
+  } else if (currentPath === "/books") {
+    page = <Books />
+  } else if (currentPath === "/login") {
+    page = <Login />
+  } else {
+    page = <NotFoundPage />
+  }
 
   return (
     <>
       <Header />
-      {currentPath === "/" ? <Home />
-        : currentPath === "/books" ? <Books />
-          : currentPath === "/login" ? <Login />
-            : <NotFoundPage />
-      }
+      {page}
       <Footer />
     </>
   )
