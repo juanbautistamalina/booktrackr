@@ -6,33 +6,17 @@ import StatusFilter from '../components/StatusFilter.jsx'
 import GenreFilter from '../components/GenreFilter.jsx'
 import Modal from '../components/Modal.jsx'
 import Button from '../components/Button.jsx'
+import useLocalStorage from '../hooks/useLocalStorage.jsx'
+import useBookFilters from '../hooks/useBookFilters.jsx'
 
 export default function Books() {
 
-    const [books, setBooks] = useState(data);
-
-    const [currentStatus, setCurrentStatus] = useState("all");
-    const [currentGenre, setCurrentGenre] = useState("");
-    const [searchQuery, setSearchQuery] = useState("");
+    const [books, setBooks] = useLocalStorage("books", data)
+    const { currentStatus, setCurrentStatus, setCurrentGenre, setSearchQuery, filteredBooks } = useBookFilters(books);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedBook, setSelectedBook] = useState(null);
 
-
-    const filteredBooks = books.filter(book => {
-        const matchesSearch =
-            book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            book.author.toLowerCase().includes(searchQuery.toLowerCase())
-
-        const matchesStatus =
-            currentStatus === "all" || book.status === currentStatus
-
-        const matchesGenre =
-            currentGenre === "" || book.genre === currentGenre
-
-        // El libro se muestra SOLO si cumple TODAS las condiciones
-        return matchesSearch && matchesStatus && matchesGenre
-    })
 
     const handleSearch = (text) => {
         setSearchQuery(text);
