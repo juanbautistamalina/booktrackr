@@ -57,22 +57,16 @@ export default function Modal({ isModalOpen, selectedBook, onSaveBook, onDeleteB
                 <div className={styles.modalBody}>
                     <img src={img || "/books/default.jpg"} alt={`Portada del libro ${title}`} />
 
-                    {/* <input type="file" id="fileInput" accept="image/*" />
-
-                        <label for="fileInput" class="custom-file-upload">
-                            Seleccionar Archivo de Imagen
-                        </label> */}
-
                     <form onSubmit={handleSubmit}>
                         <h2>{selectedBook ? "Editar Detalles del Libro" : "Agregar Nuevo Libro"}</h2>
                         <fieldset>
                             <label htmlFor={idTitle}>Titulo</label>
-                            <input type="text" name="modal-title" id={idTitle} defaultValue={title} />
+                            <input type="text" name="modal-title" id={idTitle} defaultValue={title} required/>
                         </fieldset>
 
                         <fieldset>
                             <label htmlFor={idAuthor}>Autor</label>
-                            <input type="text" name="modal-author" id={idAuthor} defaultValue={author} />
+                            <input type="text" name="modal-author" id={idAuthor} defaultValue={author} required/>
                         </fieldset>
 
                         <div className={styles.groupInline}>
