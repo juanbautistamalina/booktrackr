@@ -61,7 +61,6 @@ body {
   z-index: -1;
 }
 
-
 /* HEADER */
 .navbar {
   width: 100vw;
@@ -87,7 +86,7 @@ body {
   gap: 0.5rem;
   cursor: pointer;
   text-decoration: none;
-  
+
   & h2 {
     font-size: 1.4rem;
     color: var(--background-light);
@@ -99,7 +98,8 @@ body {
   }
 
   &:hover {
-    h2, svg {
+    h2,
+    svg {
       opacity: 0.8;
     }
   }
@@ -110,25 +110,31 @@ body {
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
   }
 
-  & a {
+  & button {
+    max-width: max-content;
+    font-family: inherit;
     text-decoration: none;
     color: var(--background-light);
     font-weight: 500;
-    transition: color 0.3s ease, transform 0.2s ease;
     font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
 
     &:hover {
       color: var(--accent);
-      transform: translateY(-2px);
     }
 
     &.active {
       color: var(--primary);
       font-weight: 600;
       border-bottom: 2px solid var(--primary);
-      padding-bottom: 2px;
+      padding-bottom: 1px;
     }
   }
 }

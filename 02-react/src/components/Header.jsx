@@ -1,22 +1,14 @@
 // import styles from "./Header.module.css"
 import Avatar from "./Avatar.jsx"
-import Link from "./Link.jsx"
-import { useState } from "react"
+import useRouter from "../hooks/useRouter.jsx"
 
 export default function Header() {
 
-    const options = [
-        { href: "/", label: "Inicio" },
-        { href: "/books", label: "Mi Biblioteca" },
-        { href: "/login", label: "Iniciar Sesión" }
-    ]
-
-    const [isActive, setIsActive] = useState("/books");
-
+    const { currentPath, navigateTo } = useRouter()
 
     return (
         <header className="navbar index">
-            <Link href="/" className="navbar-logo">
+            <a href="/" className="navbar-logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                     className="icon icon-tabler icon-tabler-book">
@@ -28,19 +20,14 @@ export default function Header() {
                     <path d="M21 6l0 13" />
                 </svg>
                 <h2>BookTrackr</h2>
-            </Link>
+            </a>
 
             <nav className="navbar-links desktop-nav">
                 <ul>
-                    {options.map(opt => (
-                        <li key={opt.href} onClick={() => setIsActive(opt.href)}>
-                            <Link href={opt.href} className={isActive === opt.href ? "active" : ""}>
-                                {opt.label}
-                            </Link>
-                        </li>
-                    ))}
+                    <li><button className={currentPath === '/' ? 'active' : ''} onClick={() => navigateTo('/')}>Inicio</button></li>
+                    <li><button className={currentPath === '/books' ? 'active' : ''} onClick={() => navigateTo('/books')}>Mi Biblioteca</button></li>
+                    <li><button className={currentPath === '/login' ? 'active' : ''} onClick={() => navigateTo('/login')}>Iniciar Sesión</button></li>
                 </ul>
-
             </nav>
 
             <Avatar />
