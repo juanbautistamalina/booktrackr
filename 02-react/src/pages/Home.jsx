@@ -1,6 +1,10 @@
 import Button from "../components/Button";
+import useRouter from "../hooks/useRouter";
 
 export default function Home() {
+
+    const { navigateTo } = useRouter()
+
     return (
         <>
             <title>BookTrackr - Inicio</title>
@@ -26,7 +30,7 @@ export default function Home() {
                 <section>
                     <h1>BookTrackr</h1>
                     <p>Tu biblioteca personal en línea.</p>
-                    <Button onClick={() => window.location.href = "/books"}>Entrar a Mi Biblioteca</Button>
+                    <Button onClick={() => navigateTo('/books')}>Entrar a Mi Biblioteca</Button>
                 </section>
             </main>
         </>
