@@ -187,7 +187,7 @@
 
 
 .modal.modalOpen {
-  display: flex !important;
+  display: flex;
 }
 
 .modal.modalOpen .modalContent {
@@ -197,16 +197,18 @@
 
 
 @media (max-width: 768px) {
-
   .modalBody {
-    display: flex;
     width: 100vw;
     height: 100vh;
-    margin: 0;
-    padding: 0;
     overflow: scroll;
     flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+   
   }
 
-
+  .modalContent {
+    margin: 0;
+    padding: 3rem 0 !important;
+  }
 }
