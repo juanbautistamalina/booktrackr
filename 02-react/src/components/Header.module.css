@@ -1,4 +1,4 @@
-/* .navbar {
+.navbar {
   width: 100vw;
   padding: 0.8rem 2rem;
   margin: 0;
@@ -16,6 +16,9 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 
   & .navbarLogo {
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -31,6 +34,10 @@
     & svg {
       color: var(--primary);
     }
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   .navbarLinks {
@@ -38,27 +45,145 @@
       list-style: none;
       display: flex;
       gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
     }
 
-    & a {
+    & button {
+      max-width: max-content;
+      font-family: inherit;
       text-decoration: none;
       color: var(--background-light);
       font-weight: 500;
-      transition: color 0.3s ease, transform 0.2s ease;
       font-size: 1rem;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      cursor: pointer;
 
       &:hover {
         color: var(--accent);
-        transform: translateY(-2px);
       }
 
       &.active {
         color: var(--primary);
         font-weight: 600;
         border-bottom: 2px solid var(--primary);
-        padding-bottom: 2px;
+        padding-bottom: 1px;
+      }
+    }
+  }
+
+  .hamburgerButton {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+
+    & .hamburgerLine {
+      width: 2rem;
+      height: 0.25rem;
+      background-color: var(--background-light);
+      border-radius: 10px;
+      transition: all 0.3s linear;
+      position: relative;
+      transform-origin: 1px;
+    }
+  }
+
+  .hamburgerButton.active .hamburgerLine:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  .hamburgerButton.active .hamburgerLine:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  .hamburgerButton.active .hamburgerLine:nth-child(3) {
+    transform: rotate(-45deg) !important;
+  }
+
+  .mobileNav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: rgba(31, 22, 20, 0.98);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .mobileNav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+
+    & button {
+      background-color: transparent;
+      border: none;
+      font-family: inherit;
+      font-size: 1.5rem;
+      color: var(--background-light);
+      font-weight: bold;
+      transition: color 0.3s;
+      cursor: pointer;
+
+      &.active {
+        color: var(--primary);
       }
     }
   }
 }
- */
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .navbarLinks {
+    display: none;
+  }
+
+  .hamburgerButton {
+    display: flex !important;
+  }
+
+  .mobileNav {
+    display: flex !important;
+  }
+
+  .mobileNav.active {
+    transform: translateX(0);
+  }
+
+  .mobileNav a {
+    font-size: 1.5rem;
+    color: var(--background-light);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .mobileNav a:hover,
+  .mobileNav a.active {
+    color: var(--primary);
+  }
+}
