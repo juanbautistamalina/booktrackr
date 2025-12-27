@@ -4,30 +4,17 @@ import Home from './pages/Home.jsx'
 import Books from './pages/Books.jsx'
 import Login from "./pages/Login.jsx"
 import NotFoundPage from "./pages/404.jsx"
-import useRouter from "./hooks/useRouter.jsx"
+import Route from "./components/Route.jsx"
 
-function App() {
-
-  const { currentPath } = useRouter();
-
-  let page;
-  if (currentPath === "/") {
-    page = <Home />
-  } else if (currentPath === "/books") {
-    page = <Books />
-  } else if (currentPath === "/login") {
-    page = <Login />
-  } else {
-    page = <NotFoundPage />
-  }
-
+export default function App() {
   return (
     <>
       <Header />
-      {page}
+      <Route path="/" component={Home} />
+      <Route path="/books" component={Books} />
+      <Route path="/login" component={Login} />
+      <Route path="*" component={NotFoundPage} />
       <Footer />
     </>
   )
 }
-
-export default App
