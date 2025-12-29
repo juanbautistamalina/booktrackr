@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import data from '../data.json'
 import BookList from '../components/BookList.jsx'
 import SearchBar from "../components/SearchBar.jsx"
@@ -8,6 +8,7 @@ import Modal from '../components/Modal.jsx'
 import Button from '../components/Button.jsx'
 import useLocalStorage from '../hooks/useLocalStorage.jsx'
 import useBookFilters from '../hooks/useBookFilters.jsx'
+import useBooksTitle from '../hooks/useBooksTitle.jsx'
 
 export default function Books() {
 
@@ -22,7 +23,8 @@ export default function Books() {
         handleStatusFilter,
         handleGenreFilter
     } = useBookFilters(books);
-    
+
+    useBooksTitle(isModalOpen, selectedBook);
 
     const handleEditBook = (book) => {
         setSelectedBook(book);
@@ -49,16 +51,6 @@ export default function Books() {
                 : [bookData, ...prevBooks] // agregar un nuevo libro
         )
     };
-
-    useEffect(() => {
-        {
-            isModalOpen && selectedBook
-                ? document.title = `BookTrackr - ${selectedBook.title}`
-                : document.title = `BookTrackr - Agregar Libro`
-        }
-        if (!isModalOpen) document.title = "BookTrackr - Mis Libros";
-
-    }, [isModalOpen, selectedBook])
 
     return (
         <>
