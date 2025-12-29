@@ -11,24 +11,18 @@ import useBookFilters from '../hooks/useBookFilters.jsx'
 
 export default function Books() {
 
-    const [books, setBooks] = useLocalStorage("books", data)
-    const { currentStatus, setCurrentStatus, setCurrentGenre, setSearchQuery, filteredBooks } = useBookFilters(books);
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [books, setBooks] = useLocalStorage("books", data);
     const [selectedBook, setSelectedBook] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-
-    const handleSearch = (text) => {
-        setSearchQuery(text);
-    }
-
-    const handleStatusFilter = (status) => {
-        setCurrentStatus(status);
-    }
-
-    const handleGenreFilter = (genre) => {
-        setCurrentGenre(genre);
-    }
+    const {
+        currentStatus,
+        filteredBooks,
+        handleSearch,
+        handleStatusFilter,
+        handleGenreFilter
+    } = useBookFilters(books);
+    
 
     const handleEditBook = (book) => {
         setSelectedBook(book);
@@ -38,15 +32,7 @@ export default function Books() {
     const handleAddBook = () => {
         setSelectedBook(null);
         setIsModalOpen(true);
-    }
-
-    const handleSaveBook = (bookData) => {
-        setBooks(prevBooks =>
-            selectedBook
-                ? prevBooks.map(book => book.id === selectedBook.id ? bookData : book) // editar libro existente
-                : [bookData, ...prevBooks] // agregar un nuevo libro
-        )
-    }
+    };
 
     const handleDeleteBook = (id) => {
         setBooks(prevBooks => prevBooks.filter(book => book.id !== id));
@@ -55,6 +41,14 @@ export default function Books() {
     const handleCloseModal = () => {
         setIsModalOpen(false)
     }
+
+    const handleSaveBook = (bookData) => {
+        setBooks(prevBooks =>
+            selectedBook
+                ? prevBooks.map(book => book.id === selectedBook.id ? bookData : book) // editar libro existente
+                : [bookData, ...prevBooks] // agregar un nuevo libro
+        )
+    };
 
     useEffect(() => {
         {

@@ -21,6 +21,18 @@ export default function useBookFilters(books) {
         return matchesSearch && matchesStatus && matchesGenre
     })
 
+    const handleSearch = (text) => {
+        setSearchQuery(text);
+    }
+
+    const handleStatusFilter = (status) => {
+        setCurrentStatus(status);
+    }
+
+    const handleGenreFilter = (genre) => {
+        setCurrentGenre(genre);
+    }
+
     return {
         currentStatus,
         setCurrentStatus,
@@ -28,6 +40,9 @@ export default function useBookFilters(books) {
         setCurrentGenre,
         searchQuery,
         setSearchQuery,
-        filteredBooks
+        filteredBooks,
+        handleSearch,
+        handleStatusFilter,
+        handleGenreFilter
     }
 }
