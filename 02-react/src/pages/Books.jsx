@@ -1,20 +1,42 @@
-import { useState } from 'react'
-import data from '../data.json'
+import { useEffect, useState } from 'react'
+// import data from '../data.json'
 import BookList from '../components/BookList.jsx'
 import SearchBar from "../components/SearchBar.jsx"
 import StatusFilter from '../components/StatusFilter.jsx'
 import GenreFilter from '../components/GenreFilter.jsx'
 import Modal from '../components/Modal.jsx'
 import Button from '../components/Button.jsx'
-import useLocalStorage from '../hooks/useLocalStorage.jsx'
+// import useLocalStorage from '../hooks/useLocalStorage.jsx'
 import useBookFilters from '../hooks/useBookFilters.jsx'
 import useBooksTitle from '../hooks/useBooksTitle.jsx'
+import { fetchBooks } from '../services/booksApi.js'
 
 export default function Books() {
 
-    const [books, setBooks] = useLocalStorage("books", data);
+    const [books, setBooks] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     const [selectedBook, setSelectedBook] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+    useEffect(() => {
+        async function loadBooks() {
+            try {
+                setLoading(true);
+                const response = await fetchBooks();
+                setBooks(response.data);
+            }
+            catch (error) {
+                console.error("Error al cargar los libros:", error);
+            }
+            finally {
+                setLoading(false);
+            }
+        }
+        loadBooks();
+    }, [])
+
 
     const {
         currentStatus,
@@ -72,7 +94,8 @@ export default function Books() {
                         <GenreFilter onGenreChange={handleGenreFilter} />
                     </div>
 
-                    <BookList books={filteredBooks} onBookClick={handleEditBook} />
+                    {loading ? <p>Cargando libros...</p> : <BookList books={filteredBooks} onBookClick={handleEditBook} />}
+
                 </section>
 
                 <div className="add-book-button">
