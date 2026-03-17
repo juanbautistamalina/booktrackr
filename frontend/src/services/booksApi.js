@@ -1,7 +1,9 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function fetchBooks() {
   const token = localStorage.getItem("token");
 
-  const response = await fetch("http://localhost:3001/api/books", {
+  const response = await fetch(`${API_URL}/api/books`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -14,7 +16,7 @@ export async function fetchBooks() {
 export async function createBook(bookData) {
   const token = localStorage.getItem("token");
 
-  const response = await fetch("http://localhost:3001/api/books", {
+  const response = await fetch(`${API_URL}/api/books`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,7 +32,7 @@ export async function createBook(bookData) {
 export async function updateBook(id, bookData) {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(`http://localhost:3001/api/books/${id}`, {
+  const response = await fetch(`${API_URL}/api/books/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -46,7 +48,7 @@ export async function updateBook(id, bookData) {
 export async function deleteBook(id) {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(`http://localhost:3001/api/books/${id}`, {
+  const response = await fetch(`${API_URL}/api/books/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
