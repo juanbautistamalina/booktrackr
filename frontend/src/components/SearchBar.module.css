@@ -1,0 +1,17 @@
+.searchBar {
+  display: flex;
+  width: 100%;
+  max-width: 365px;
+  border: 1px solid var(--color-line);
+  border-radius: 0.5em;
+  padding: 1em;
+  margin: 0 0 0.5em 0.8em;
+  background-color: transparent;
+  color: var(--background-light);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+
+  &::placeholder {
+    color: var(--color-muted);
+  }
+}
