@@ -427,3 +427,14 @@ main.books {
   font-size: 0.9rem;
   text-align: center;
 }
+
+.form-link {
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--primary);
+  }
+}

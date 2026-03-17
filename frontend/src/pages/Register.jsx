@@ -45,7 +45,10 @@ export default function Register() {
 
                     <div className="form-footer">
                         <p>¿Ya tienes cuenta?</p>
-                        <a href="/login">Iniciar Sesión</a>
+                        <span
+                            onClick={() => navigateTo("/login")}
+                            className="form-link"
+                        >Iniciar Sesión</span>
                     </div>
                 </form>
             </main>

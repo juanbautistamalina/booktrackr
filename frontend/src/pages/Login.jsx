@@ -45,7 +45,10 @@ export default function Login() {
 
                     <div className="form-footer">
                         <p>¿No tienes cuenta?</p>
-                        <a href="/register">Registrarse</a>
+                        <span
+                            onClick={() => navigateTo("/register")}
+                            className="form-link"
+                        >Registrarse</span>
                     </div>
                 </form>
             </main>
