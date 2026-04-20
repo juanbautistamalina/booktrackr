@@ -28,6 +28,8 @@ out/
 # =========================
 .env
 .env.*
+**/.env
+**/.env.*
 !.env.example
 *.local
 
