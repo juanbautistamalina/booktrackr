@@ -5,13 +5,11 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors({
-  origin: [
-    "https://booktrackr-git-main-juanbautistamalinas-projects.vercel.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
 
 app.use(express.json({ limit: "10mb" }));
 
