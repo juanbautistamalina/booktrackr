@@ -13,6 +13,10 @@ app.use(
 
 app.use(express.json({ limit: "10mb" }));
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});  
+
 app.use("/api/auth", authRouter);
 app.use("/api/books", booksRouter);
 
