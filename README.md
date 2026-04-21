@@ -13,31 +13,40 @@ El objetivo es ofrecer una experiencia cálida y minimalista, centrada en la lec
 Este proyecto se desarrolla en paralelo al **bootcamp Full Stack de [midudev](https://github.com/midudev/jscamp)**, aplicando cada tecnología aprendida módulo a módulo.
 
 
-## 🎯 Objetivos y Características
+## 🎯 Características
 
-- ✨ Registro y gestión de libros (leído, leyendo, pendiente).
-- 📝 Notas o frases personales por libro.
-- 🔍 Filtros por estado o género.
-- 📚 Estilo visual **vintage tipo biblioteca clásica**.
-- 💾 Persistencia de datos local y, posteriormente, con base de datos SQL.
-- 🔐 Sistema de usuarios.
+- 🔐 Sistema de registro e inicio de sesión con autenticación JWT
+- ✨ Registro y gestión de libros con estados: leyendo, leído y pendiente
+- 🖼️ Portada personalizada por libro (subida desde tus archivos)
+- 📝 Notas personales por libro
+- 🔍 Filtros por estado y género literario
+- 👤 Avatar único generado automáticamente para cada usuario
+- 📱 Diseño responsive para móvil y escritorio
+- 📚 Estilo visual **vintage tipo biblioteca clásica**
 
 
 ## 🛠️ Tecnologías
 
-- 00 - HTML & CSS
-- 01 - JavaScript
-- 02 - React
-- 03 - Estado Global y React Router
-- 04 - Node.js
-- 05 - TypeScript
-- 06 - SQL
-- 07 - CI/CD
-- 08 - Docker
+### Frontend
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-## 🎨 Diseño
-![Diseño de la aplicación](assets/screenshot.png)
-- 👉🏻 [Ver diseño del proyecto](https://stitch.withgoogle.com/projects/10756088116725934991)
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+
+### Base de datos
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+
+### Deploy
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
 
 ## 📜 Licencia
 
@@ -55,4 +64,4 @@ Desarrollado con ❤️ por **Juan Bautista Malina**.
 
 ---
 
-> _“Un libro leído es una historia vivida dos veces.”_ 📖
+> *"Una habitación sin libros es como un cuerpo sin alma."*
