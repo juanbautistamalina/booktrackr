@@ -9,6 +9,12 @@ export async function fetchBooks() {
     },
   });
 
+   if (response.status === 401 || response.status === 403) {
+    localStorage.removeItem("token")
+    window.location.href = "/login"
+    return
+  }
+
   const data = await response.json();
   return { data: data.books };
 }
