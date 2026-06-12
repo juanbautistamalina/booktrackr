@@ -10,9 +10,6 @@
 **BookTrackr** es una plataforma que te permite llevar el control de tus libros leídos, pendientes o en curso, y guardar notas o frases que te hayan marcado.  
 El objetivo es ofrecer una experiencia cálida y minimalista, centrada en la lectura y el desarrollo personal.
 
-Este proyecto se desarrolla en paralelo al **bootcamp Full Stack de [midudev](https://github.com/midudev/jscamp)**, aplicando cada tecnología aprendida módulo a módulo.
-
-
 ## 🎯 Características
 
 - 🔐 Sistema de registro e inicio de sesión con autenticación JWT
